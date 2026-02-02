@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Bị Thanh Toán QR | Giải Pháp Tự Động Hóa Thanh Toán</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Thiết bị thanh toán QR đa năng cho máy giặt, máy bán hàng tự động, game, ghế massage. Tự động hóa thu tiền, quản lý từ xa, xuất hóa đơn điện tử.">
+    <meta name="keywords" content="thiết bị thanh toán QR, máy thanh toán tự động, thanh toán không tiền mặt, QR payment device, máy giặt tự động">
+    <meta name="author" content="QR Payment Solutions">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thiết Bị Thanh Toán QR - Giải Pháp Tự Động Hóa">
+    <meta property="og:description" content="Tự động hóa thanh toán cho máy giặt, game, ghế massage. Quản lý từ xa, báo cáo realtime.">
+    <meta property="og:image" content="/images/og-qr-payment.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ============================================
+           TITANIUM COMMAND DESIGN SYSTEM
+           QR Payment Landing Page
+        ============================================ */
+
+        :root {
+            /* Brand Colors */
+            --color-primary: #0055ff;
+            --color-primary-hover: #0044cc;
+            --color-secondary: #ff4800;
+            --color-dark: #111111;
+            --color-light: #f0f2f5;
+            --color-white: #ffffff;
+            --color-success: #00cc66;
+            --color-warning: #ffaa00;
+            --color-error: #ff3333;
+
+            /* Grays */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+
+            /* Chamfered Shapes */
+            --chamfer-sm: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+            --chamfer-md: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            --chamfer-lg: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            --chamfer-xl: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+
+            /* Typography */
+            --font-display: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: var(--color-primary); color: white; }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--color-dark);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary);
+            color: white;
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.02em;
+            color: var(--color-dark);
+        }
+
+        .nav-brand span { color: var(--color-primary); }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.15s;
+        }
+
+        .nav-link:hover { color: var(--color-primary); }
+
+        .nav-cta {
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 24px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-sm);
+            text-decoration: none;
+            transition: all 0.15s;
+            box-shadow: 4px 4px 0 var(--color-dark);
+        }
+
+        .nav-cta:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-dark);
+        }
+
+        .nav-mobile-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-dark);
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu { display: none; }
+            .nav-mobile-btn { display: block; }
+        }
+
+        /* ============================================
+           BUTTONS
+        ============================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            text-decoration: none;
+            transition: all 0.15s;
+            box-shadow: 6px 6px 0 var(--color-dark);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 var(--color-dark);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: white;
+            color: var(--color-dark);
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            text-decoration: none;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-100);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+           SECTION STYLES
+        ============================================ */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        .section-alt {
+            background: white;
+            border-top: 3px solid var(--color-dark);
+            border-bottom: 3px solid var(--color-dark);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--color-primary);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            clip-path: var(--chamfer-sm);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .section-title span { color: var(--color-primary); }
+        .section-dark .section-title span { color: var(--color-secondary); }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-dark .section-description { color: var(--gray-400); }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            position: relative;
+            padding: 160px 24px 100px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-light) 0%, var(--gray-100) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 20px;
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-sm);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-primary);
+            margin-bottom: 32px;
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .hero-title-gradient {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #00aaff 50%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+        }
+
+        .hero-description strong { color: var(--color-dark); }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 64px;
+        }
+
+        /* ============================================
+           CARDS
+        ============================================ */
+        .card {
+            background: var(--color-light);
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 8px 8px 0 var(--color-dark);
+        }
+
+        .card-white { background: white; }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-dark);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .card-icon-primary { background: linear-gradient(135deg, var(--color-primary) 0%, #0044cc 100%); }
+        .card-icon-secondary { background: linear-gradient(135deg, var(--color-secondary) 0%, #cc3a00 100%); }
+        .card-icon-success { background: linear-gradient(135deg, var(--color-success) 0%, #00aa55 100%); }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .card-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           GRIDS
+        ============================================ */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* ============================================
+           PAIN POINTS SECTION
+        ============================================ */
+        .pain-card {
+            background: white;
+            border: 2px solid var(--color-error);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-error);
+        }
+
+        .pain-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 51, 51, 0.1);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--color-error);
+        }
+
+        .pain-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-dark);
+        }
+
+        .pain-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           SOLUTION SECTION
+        ============================================ */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+
+        .solution-visual {
+            background: var(--gray-900);
+            border: 3px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            padding: 40px;
+            aspect-ratio: 4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .solution-device {
+            font-size: 80px;
+            margin-bottom: 16px;
+        }
+
+        .solution-label {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .solution-content h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .solution-list {
+            list-style: none;
+        }
+
+        .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 16px;
+        }
+
+        .solution-list li:last-child { border-bottom: none; }
+
+        .solution-check {
+            width: 24px;
+            height: 24px;
+            background: var(--color-success);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           INTEGRATION MODELS
+        ============================================ */
+        .integration-card {
+            background: white;
+            border: 2px solid var(--gray-300);
+            clip-path: var(--chamfer-md);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .integration-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 0 var(--color-primary);
+        }
+
+        .integration-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .integration-name {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           FEATURES SECTION
+        ============================================ */
+        .feature-card {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+        ============================================ */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        .benefit-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--color-light);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--color-primary);
+        }
+
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           PROCESS STEPS
+        ============================================ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+
+        .step-card {
+            background: var(--gray-900);
+            border: 2px solid var(--gray-800);
+            clip-path: var(--chamfer-md);
+            padding: 32px;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .step-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            font-family: var(--font-mono);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--color-primary);
+            opacity: 0.3;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        /* ============================================
+           TARGET AUDIENCE
+        ============================================ */
+        .audience-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .audience-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .audience-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .audience-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           DASHBOARD PREVIEW
+        ============================================ */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+
+        .dashboard-preview {
+            background: var(--gray-900);
+            border: 3px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            padding: 24px;
+            aspect-ratio: 16/10;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-700);
+        }
+
+        .dashboard-title {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--color-primary);
+            text-transform: uppercase;
+        }
+
+        .dashboard-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--color-success);
+        }
+
+        .dashboard-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-success);
+            border-radius: 50%;
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-stat {
+            background: var(--gray-800);
+            clip-path: var(--chamfer-sm);
+            padding: 16px;
+            text-align: center;
+        }
+
+        .dashboard-stat-value {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .dashboard-stat-label {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+        }
+
+        .dashboard-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .dashboard-feature {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-md);
+            padding: 20px;
+        }
+
+        .dashboard-feature-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dashboard-feature-title svg {
+            color: var(--color-primary);
+        }
+
+        .dashboard-feature-text {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        /* ============================================
+           STATS SECTION
+        ============================================ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonial-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            color: var(--color-warning);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ============================================
+           PARTNERS / TRUST BADGES
+        ============================================ */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background: white;
+            border: 2px solid var(--gray-200);
+            clip-path: var(--chamfer-sm);
+            padding: 16px 24px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--gray-600);
+            transition: all 0.2s;
+        }
+
+        .partner-logo:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+           FAQ SECTION
+        ============================================ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: left;
+            color: var(--color-dark);
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-icon {
+            transition: transform 0.2s;
+            color: var(--color-primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ============================================
+           COMPARISON TABLE
+        ============================================ */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .comparison-table th {
+            background: var(--color-dark);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table th:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .highlight {
+            background: rgba(0, 85, 255, 0.05);
+        }
+
+        .check-yes {
+            color: var(--color-success);
+        }
+
+        .check-no {
+            color: var(--color-error);
+        }
+
+        .check-partial {
+            color: var(--color-warning);
+        }
+
+        /* ============================================
+           VIDEO SECTION
+        ============================================ */
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--gray-900);
+            border: 3px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--color-dark) 100%);
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 16px;
+            transition: transform 0.2s;
+        }
+
+        .video-wrapper:hover .video-play-btn {
+            transform: scale(1.1);
+        }
+
+        .video-text {
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--gray-900) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: var(--gray-400);
+            margin-bottom: 48px;
+        }
+
+        .cta-form {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-lg);
+            padding: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            background: var(--gray-900);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-sm);
+            color: white;
+            font-size: 14px;
+            font-family: var(--font-display);
+            transition: border-color 0.15s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-500);
+        }
+
+        .form-full {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 640px) {
+            .form-full { grid-column: span 1; }
+        }
+
+        .form-submit {
+            grid-column: span 2;
+            padding: 16px 32px;
+            background: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        @media (max-width: 640px) {
+            .form-submit { grid-column: span 1; }
+        }
+
+        .form-submit:hover {
+            background: var(--color-primary-hover);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            padding: 60px 24px 30px;
+            background: black;
+            border-top: 3px solid var(--color-dark);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-weight: 800;
+            color: white;
+        }
+
+        .footer-brand-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-link:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           FLOATING CTA
+        ============================================ */
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            background: var(--color-success);
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.15s;
+            box-shadow: 4px 4px 0 var(--color-dark);
+        }
+
+        .floating-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-dark);
+        }
+
+        .floating-btn-phone {
+            background: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-mark">QR</div>
+                <div class="nav-brand">QR <span>PAYMENT</span></div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features" class="nav-link">Tính năng</a></li>
+                <li><a href="#benefits" class="nav-link">Lợi ích</a></li>
+                <li><a href="#process" class="nav-link">Quy trình</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Liên hệ ngay</a></li>
+            </ul>
+            <button class="nav-mobile-btn">
+                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i data-lucide="zap" style="width: 14px; height: 14px;"></i>
+                Giải pháp thanh toán tự động
+            </div>
+
+            <h1 class="hero-title">
+                Thiết Bị <span class="hero-title-gradient">Thanh Toán QR</span><br>
+                Đa Năng
+            </h1>
+
+            <p class="hero-description">
+                Tự động hóa việc thu tiền cho <strong>máy giặt, máy bán hàng, game, ghế massage</strong>.
+                Quản lý từ xa, báo cáo realtime, xuất hóa đơn tự động.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+                    Tư vấn miễn phí
+                </a>
+                <a href="#demo" class="btn-secondary">
+                    <i data-lucide="play-circle" style="width: 20px; height: 20px;"></i>
+                    Xem Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Vấn đề</div>
+                <h2 class="section-title">Khó khăn <span>thị trường</span></h2>
+                <p class="section-description">
+                    Các vấn đề phổ biến khi vận hành máy tự động với phương thức thu tiền truyền thống.
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="banknote" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Khó khăn thu tiền mặt</h3>
+                    <p class="pain-text">Phải đi thu tiền thường xuyên, rủi ro mất cắp, hỏng hóc két tiền, khách không có tiền lẻ.</p>
+                </div>
+
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="file-spreadsheet" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Quản lý doanh thu thủ công</h3>
+                    <p class="pain-text">Ghi chép sổ sách thủ công, khó theo dõi chính xác, tốn thời gian đối soát cuối ngày.</p>
+                </div>
+
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="file-warning" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Thiếu minh bạch & hóa đơn</h3>
+                    <p class="pain-text">Không có hóa đơn cho khách, khó kiểm soát thất thoát, không đáp ứng yêu cầu thuế.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-visual">
+                    <div class="solution-device">📱</div>
+                    <div class="solution-label">QR Payment Device</div>
+                </div>
+                <div class="solution-content">
+                    <div class="section-badge">Giải pháp</div>
+                    <h3>Thiết bị thanh toán QR đa năng</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Tích hợp thanh toán QR đa ngân hàng, đa ví điện tử</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Hoạt động tự động 24/7 - không cần nhân sự</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Kết nối trực tiếp với máy móc thiết bị</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Quản lý từ xa qua dashboard web/app</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Xuất hóa đơn điện tử tự động</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATION MODELS -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Ứng dụng</div>
+                <h2 class="section-title">Mô hình <span>tích hợp</span></h2>
+                <p class="section-description">
+                    Thiết bị thanh toán QR có thể tích hợp với nhiều loại máy tự động khác nhau.
+                </p>
+            </div>
+
+            <div class="grid-5">
+                <div class="integration-card">
+                    <div class="integration-icon">🧺</div>
+                    <div class="integration-name">Máy giặt - Máy sấy</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">🎮</div>
+                    <div class="integration-name">Máy trò chơi / Game</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">💆</div>
+                    <div class="integration-name">Ghế massage</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">📸</div>
+                    <div class="integration-name">Photobooth</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-icon">🏭</div>
+                    <div class="integration-name">Máy tự động khác</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Tính năng</div>
+                <h2 class="section-title">Tính năng <span>nổi bật</span></h2>
+                <p class="section-description">
+                    Giải pháp toàn diện cho việc tự động hóa thanh toán và quản lý thiết bị.
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="qr-code" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Thanh toán QR đa nền tảng</h3>
+                    <p class="feature-text">Hỗ trợ tất cả ngân hàng nội địa, MoMo, ZaloPay, VNPay và các ví điện tử phổ biến.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="cable" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Kết nối trực tiếp với máy</h3>
+                    <p class="feature-text">Giao tiếp relay/pulse với máy móc, tự động kích hoạt khi thanh toán thành công.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="globe" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản lý từ xa</h3>
+                    <p class="feature-text">Dashboard web/app để theo dõi trạng thái, cấu hình giá, cập nhật firmware từ xa.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Xuất hóa đơn tự động</h3>
+                    <p class="feature-text">Tự động xuất hóa đơn điện tử cho mỗi giao dịch, đáp ứng yêu cầu thuế.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Bảo mật & ổn định</h3>
+                    <p class="feature-text">Mã hóa dữ liệu end-to-end, uptime 99.9%, hoạt động ổn định trong mọi điều kiện.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <h3 class="feature-title">Báo cáo realtime</h3>
+                    <p class="feature-text">Thống kê doanh thu theo ngày/tuần/tháng, xuất báo cáo Excel, biểu đồ trực quan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Lợi ích</div>
+                <h2 class="section-title">Lợi ích <span>mang lại</span></h2>
+                <p class="section-description">
+                    Những giá trị thực tế khi áp dụng thiết bị thanh toán QR cho doanh nghiệp của bạn.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="trending-up" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="benefit-title">Tăng doanh thu</h3>
+                    <p class="benefit-text">Khách hàng dễ dàng thanh toán hơn, tăng tỷ lệ sử dụng dịch vụ.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="shield" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="benefit-title">Giảm thất thoát</h3>
+                    <p class="benefit-text">Loại bỏ rủi ro mất cắp tiền mặt, mọi giao dịch được ghi nhận.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="users" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="benefit-title">Tiết kiệm nhân sự</h3>
+                    <p class="benefit-text">Không cần người thu tiền, quản lý từ xa mọi lúc mọi nơi.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="maximize" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="benefit-title">Dễ mở rộng</h3>
+                    <p class="benefit-text">Thêm máy mới dễ dàng, quản lý tập trung nhiều điểm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Quy trình</div>
+                <h2 class="section-title">Cách <span>hoạt động</span></h2>
+                <p class="section-description">
+                    Quy trình thanh toán đơn giản, nhanh chóng chỉ trong vài giây.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <i data-lucide="scan" class="step-icon"></i>
+                    <h3 class="step-title">Quét QR</h3>
+                    <p class="step-text">Khách hàng mở app ngân hàng, quét mã QR trên thiết bị.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <i data-lucide="credit-card" class="step-icon"></i>
+                    <h3 class="step-title">Thanh toán</h3>
+                    <p class="step-text">Xác nhận số tiền và hoàn tất thanh toán trong vài giây.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <i data-lucide="play" class="step-icon"></i>
+                    <h3 class="step-title">Máy hoạt động</h3>
+                    <p class="step-text">Thiết bị tự động kích hoạt máy sau khi nhận được tiền.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <i data-lucide="receipt" class="step-icon"></i>
+                    <h3 class="step-title">Xuất hóa đơn</h3>
+                    <p class="step-text">Hóa đơn điện tử được gửi tự động qua SMS/email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET AUDIENCE -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Khách hàng</div>
+                <h2 class="section-title">Đối tượng <span>phù hợp</span></h2>
+                <p class="section-description">
+                    Giải pháp phù hợp cho nhiều mô hình kinh doanh khác nhau.
+                </p>
+            </div>
+
+            <div class="grid-4">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i data-lucide="building" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Chủ khu trọ / Chung cư</h3>
+                        <p class="audience-text">Lắp đặt máy giặt, máy sấy tự phục vụ cho cư dân.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i data-lucide="store" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Trung tâm thương mại</h3>
+                        <p class="audience-text">Khu vực game, ghế massage, photobooth tự động.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i data-lucide="settings" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Đơn vị vận hành</h3>
+                        <p class="audience-text">Doanh nghiệp vận hành chuỗi máy tự động.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i data-lucide="briefcase" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Nhà đầu tư</h3>
+                        <p class="audience-text">Đầu tư mô hình kinh doanh máy tự động thụ động.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Quản lý</div>
+                <h2 class="section-title">Hệ thống <span>quản lý</span></h2>
+                <p class="section-description">
+                    Dashboard trực quan giúp bạn quản lý toàn bộ hệ thống từ một nơi.
+                </p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">QR Payment Dashboard</div>
+                        <div class="dashboard-status">Online</div>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">12</div>
+                            <div class="dashboard-stat-label">Thiết bị</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">2.5M</div>
+                            <div class="dashboard-stat-label">Doanh thu hôm nay</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">156</div>
+                            <div class="dashboard-stat-label">Giao dịch</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-features">
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">
+                            <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                            Dashboard quản lý
+                        </div>
+                        <p class="dashboard-feature-text">Giao diện trực quan, dễ sử dụng trên mọi thiết bị.</p>
+                    </div>
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">
+                            <i data-lucide="bar-chart" style="width: 18px; height: 18px;"></i>
+                            Thống kê doanh thu
+                        </div>
+                        <p class="dashboard-feature-text">Biểu đồ chi tiết theo ngày, tuần, tháng, năm.</p>
+                    </div>
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">
+                            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                            Quản lý nhiều điểm
+                        </div>
+                        <p class="dashboard-feature-text">Theo dõi tất cả máy tại nhiều địa điểm khác nhau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Thống kê</div>
+                <h2 class="section-title">Con số <span>ấn tượng</span></h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" data-count="500">500+</div>
+                    <div class="stat-label">Thiết bị đã lắp đặt</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10M+</div>
+                    <div class="stat-label">Giao dịch thành công</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">99.9%</div>
+                    <div class="stat-label">Thời gian hoạt động</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">200+</div>
+                    <div class="stat-label">Khách hàng tin dùng</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Đánh giá</div>
+                <h2 class="section-title">Khách hàng <span>nói gì</span></h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"Từ khi lắp thiết bị thanh toán QR, doanh thu tăng 30% vì khách hàng không còn phải lo tiền lẻ. Quản lý từ xa rất tiện lợi."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TH</div>
+                        <div>
+                            <div class="testimonial-name">Anh Trần Hùng</div>
+                            <div class="testimonial-role">Chủ chuỗi tiệm giặt tự động</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"Hệ thống báo cáo chi tiết giúp tôi kiểm soát doanh thu từng máy. Không còn lo thất thoát như trước."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ML</div>
+                        <div>
+                            <div class="testimonial-name">Chị Mai Lan</div>
+                            <div class="testimonial-role">Quản lý khu game center</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">"Lắp đặt nhanh, support nhiệt tình. Cư dân chung cư rất thích vì không cần mang tiền mặt."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">VN</div>
+                        <div>
+                            <div class="testimonial-name">Anh Văn Nam</div>
+                            <div class="testimonial-role">BQT Chung cư Sunrise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Đối tác <span>hỗ trợ</span></h2>
+                <p class="section-description">Hỗ trợ thanh toán qua 40+ ngân hàng và ví điện tử</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-logo">VietQR</div>
+                <div class="partner-logo">NAPAS</div>
+                <div class="partner-logo">MoMo</div>
+                <div class="partner-logo">ZaloPay</div>
+                <div class="partner-logo">VNPay</div>
+                <div class="partner-logo">Vietcombank</div>
+                <div class="partner-logo">Techcombank</div>
+                <div class="partner-logo">MB Bank</div>
+                <div class="partner-logo">VPBank</div>
+                <div class="partner-logo">BIDV</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO DEMO -->
+    <section id="demo" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Demo</div>
+                <h2 class="section-title">Xem thiết bị <span>hoạt động</span></h2>
+                <p class="section-description">Video mô phỏng quy trình thanh toán thực tế</p>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="video-placeholder">
+                        <div class="video-play-btn">
+                            <i data-lucide="play" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="video-text">Xem video demo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">So sánh</div>
+                <h2 class="section-title">So sánh <span>phương thức</span></h2>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Tính năng</th>
+                            <th class="highlight">QR Payment</th>
+                            <th>Tiền mặt</th>
+                            <th>Thẻ từ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thu tiền tự động</td>
+                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Không cần nhân sự</td>
+                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Báo cáo realtime</td>
+                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Hóa đơn tự động</td>
+                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Quản lý từ xa</td>
+                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
+                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Chi phí vận hành</td>
+                            <td class="highlight"><strong style="color: var(--color-success);">Thấp</strong></td>
+                            <td><strong style="color: var(--color-error);">Cao</strong></td>
+                            <td><strong style="color: var(--color-warning);">Trung bình</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">FAQ</div>
+                <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        Thiết bị hoạt động như thế nào?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Thiết bị kết nối internet (4G/WiFi) và liên kết với máy móc qua relay. Khi khách quét QR và thanh toán thành công, thiết bị sẽ tự động gửi tín hiệu kích hoạt máy. Mọi giao dịch được ghi nhận và đồng bộ lên hệ thống quản lý realtime.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Hỗ trợ những loại máy nào?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Thiết bị hỗ trợ hầu hết các loại máy tự động có thể điều khiển bằng relay/pulse: máy giặt, máy sấy, máy bán hàng tự động, game arcade, ghế massage, photobooth, máy rửa xe, và nhiều loại máy khác.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Chi phí lắp đặt và bảo trì?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Chi phí thiết bị từ 2-5 triệu đồng tùy model. Phí dịch vụ hàng tháng từ 50-100k/thiết bị bao gồm 4G, hệ thống quản lý và hỗ trợ kỹ thuật. Không mất phí lắp đặt ban đầu.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Thời gian lắp đặt bao lâu?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Thời gian lắp đặt trung bình 30-60 phút/máy. Đội ngũ kỹ thuật sẽ hướng dẫn sử dụng và cấu hình hệ thống ngay sau khi hoàn tất.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Có cần kết nối internet không?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Có, thiết bị cần kết nối internet để xác nhận thanh toán và đồng bộ dữ liệu. Thiết bị có sẵn SIM 4G hoặc có thể kết nối WiFi tại điểm lắp đặt.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Chính sách bảo hành?
+                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Bảo hành phần cứng 12 tháng. Hỗ trợ kỹ thuật từ xa 24/7. Đổi thiết bị mới nếu lỗi do nhà sản xuất. Cập nhật firmware miễn phí trọn đời.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="contact" class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">Sẵn sàng tự động hóa?</h2>
+            <p class="cta-description">
+                Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết cho dự án của bạn.
+            </p>
+
+            <div class="cta-form">
+                <form class="form-grid">
+                    <input type="text" placeholder="Họ và tên *" class="form-input" required>
+                    <input type="tel" placeholder="Số điện thoại *" class="form-input" required>
+                    <input type="email" placeholder="Email" class="form-input form-full">
+                    <select class="form-input form-full">
+                        <option>Chọn nhu cầu của bạn</option>
+                        <option>Máy giặt / Máy sấy</option>
+                        <option>Máy trò chơi / Game</option>
+                        <option>Ghế massage</option>
+                        <option>Photobooth</option>
+                        <option>Máy bán hàng tự động</option>
+                        <option>Khác</option>
+                    </select>
+                    <textarea placeholder="Mô tả nhu cầu (số lượng máy, địa điểm...)" class="form-input form-full" rows="3"></textarea>
+                    <button type="submit" class="form-submit">
+                        <i data-lucide="send" style="width: 18px; height: 18px; margin-right: 8px;"></i>
+                        Gửi yêu cầu tư vấn
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-logo">QR</div>
+                        <div class="footer-brand-name">QR Payment</div>
+                    </div>
+                    <p class="footer-description">
+                        Giải pháp thiết bị thanh toán QR đa năng cho máy tự động.
+                        Tự động hóa thu tiền, quản lý từ xa, báo cáo realtime.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Sản phẩm</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Thiết bị QR Basic</a></li>
+                        <li><a href="#" class="footer-link">Thiết bị QR Pro</a></li>
+                        <li><a href="#" class="footer-link">Hệ thống quản lý</a></li>
+                        <li><a href="#" class="footer-link">API tích hợp</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Hỗ trợ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Hướng dẫn lắp đặt</a></li>
+                        <li><a href="#faq" class="footer-link">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="footer-link">Chính sách bảo hành</a></li>
+                        <li><a href="#contact" class="footer-link">Liên hệ hỗ trợ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Liên hệ</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:19001234" class="footer-link">Hotline: 1900 1234</a></li>
+                        <li><a href="mailto:info@qrpayment.vn" class="footer-link">info@qrpayment.vn</a></li>
+                        <li><a href="#" class="footer-link">Zalo: 0901 234 567</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 QR Payment Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <div class="floating-cta">
+        <a href="tel:19001234" class="floating-btn floating-btn-phone" title="Gọi ngay">
+            <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
+        </a>
+        <a href="https://zalo.me/0901234567" class="floating-btn" title="Chat Zalo" target="_blank">
+            <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
+        </a>
+    </div>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Thiết Bị Thanh Toán QR",
+        "description": "Thiết bị thanh toán QR đa năng cho máy tự động",
+        "brand": "QR Payment",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "VND",
+            "price": "2000000",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Thiết bị hoạt động như thế nào?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Thiết bị kết nối internet và liên kết với máy móc qua relay. Khi khách quét QR và thanh toán thành công, thiết bị sẽ tự động gửi tín hiệu kích hoạt máy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hỗ trợ những loại máy nào?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Thiết bị hỗ trợ hầu hết các loại máy tự động: máy giặt, máy sấy, máy bán hàng tự động, game arcade, ghế massage, photobooth, và nhiều loại máy khác."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+
+                // Reinitialize icons
+                lucide.createIcons();
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(Get-Date -UFormat \"%y%m%d\")",
+      "Bash(git config:*)"
+    ]
+  }
+}
