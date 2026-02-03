@@ -786,7 +786,50 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
-            margin-bottom: 64px;
+            margin-bottom: 48px;
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-mono);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 640px) {
+            .hero-stats {
+                gap: 24px;
+            }
+            .hero-stat-value {
+                font-size: 28px;
+            }
+            .hero-stat-label {
+                font-size: 12px;
+            }
         }
 
         /* ============================================
@@ -2410,6 +2453,22 @@
                     <i data-lucide="play-circle" style="width: 20px; height: 20px;"></i>
                     Xem Demo
                 </a>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">10+</div>
+                    <div class="hero-stat-label">Năm kinh nghiệm</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">10.000+</div>
+                    <div class="hero-stat-label">Thiết bị tự động</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">24/7</div>
+                    <div class="hero-stat-label">Vận hành tự động</div>
+                </div>
             </div>
         </div>
     </section>
