@@ -1,0 +1,3300 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Bị Thanh Toán QR | Chí Vĩ - Giải Pháp Tự Phục Vụ</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Công ty TNHH TM DV Công Nghệ Tự Phục Vụ Chí Vĩ - Thiết bị thanh toán QR đa năng cho máy giặt, máy bán hàng tự động, game, ghế massage. Tự phục vụ thu tiền, quản lý từ xa.">
+    <meta name="keywords" content="thiết bị thanh toán QR, máy thanh toán tự động, thanh toán không tiền mặt, QR payment device, máy giặt tự động, Chí Vĩ">
+    <meta name="author" content="Công ty TNHH TM DV Công Nghệ Tự Phục Vụ Chí Vĩ">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thiết Bị Thanh Toán QR | Chí Vĩ - Giải Pháp Tự Phục Vụ">
+    <meta property="og:description" content="Công ty Chí Vĩ - Tự phục vụ thanh toán cho máy giặt, game, ghế massage. Quản lý từ xa, báo cáo realtime.">
+    <meta property="og:image" content="/images/og-qr-payment.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ============================================
+           TITANIUM COMMAND DESIGN SYSTEM
+           QR Payment Landing Page
+        ============================================ */
+
+        :root {
+            /* Brand Colors */
+            --color-primary: #0055ff;
+            --color-primary-hover: #0044cc;
+            --color-secondary: #ff4800;
+            --color-dark: #111111;
+            --color-light: #f0f2f5;
+            --color-white: #ffffff;
+            --color-success: #00cc66;
+            --color-warning: #ffaa00;
+            --color-error: #ff3333;
+
+            /* Grays */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+
+            /* Chamfered Shapes */
+            --chamfer-sm: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+            --chamfer-md: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            --chamfer-lg: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            --chamfer-xl: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+
+            /* Typography */
+            --font-display: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: var(--color-primary); color: white; }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 96px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .nav-brand-line1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--color-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-brand-line2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--color-primary);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-brand-line3 {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--gray-600);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .nav-brand-line4 {
+            font-family: var(--font-mono);
+            font-weight: 500;
+            font-size: 9px;
+            color: var(--gray-500);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { height: 76px; padding: 0 16px; }
+            .nav-logo-img { height: 60px; }
+            .nav-brand-line1 { font-size: 16px; }
+            .nav-brand-line2 { font-size: 11px; }
+            .nav-brand-line3 { font-size: 10px; }
+            .nav-brand-line4 { font-size: 8px; }
+        }
+
+        .nav-sales {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-hotline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            padding: 8px 16px 8px 8px;
+            border-radius: 50px;
+            background: rgba(0, 204, 102, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .nav-hotline:hover {
+            background: rgba(0, 204, 102, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-hotline-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            animation: pulse-phone 2s infinite;
+        }
+
+        .nav-hotline-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes pulse-phone {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 204, 102, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 204, 102, 0); }
+        }
+
+        .nav-hotline-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .nav-hotline-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-success);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-hotline-number {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-dark);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff4800;
+            color: white;
+            padding: 14px 24px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-sm);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0 var(--color-dark);
+            animation: cta-glow 2s infinite;
+        }
+
+        .nav-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @keyframes cta-glow {
+            0%, 100% { box-shadow: 4px 4px 0 var(--color-dark), 0 0 0 0 rgba(255, 72, 0, 0.4); }
+            50% { box-shadow: 4px 4px 0 var(--color-dark), 0 0 20px 5px rgba(255, 72, 0, 0.2); }
+        }
+
+        .nav-cta:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-dark);
+            background: #e04000;
+        }
+
+        .nav-mobile-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-dark);
+        }
+
+        @media (max-width: 1024px) {
+            .nav-hotline-text { display: none; }
+            .nav-cta span { display: none; }
+            .nav-cta { padding: 12px; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-sales { gap: 12px; }
+            .nav-hotline { padding: 4px; background: transparent; }
+            .nav-hotline-icon { width: 36px; height: 36px; }
+            .nav-hotline-icon svg { width: 18px; height: 18px; }
+            .nav-cta { padding: 10px; }
+            .nav-cta svg { width: 16px; height: 16px; }
+        }
+
+        /* ============================================
+           BUTTONS
+        ============================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            text-decoration: none;
+            transition: all 0.15s;
+            box-shadow: 6px 6px 0 var(--color-dark);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 var(--color-dark);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: white;
+            color: var(--color-dark);
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            text-decoration: none;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-100);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+        ============================================ */
+
+        /* Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-scale {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Animation Classes - Initially hidden */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animate-fade-up {
+            transform: translateY(40px);
+        }
+
+        .animate-on-scroll.animate-fade-down {
+            transform: translateY(-40px);
+        }
+
+        .animate-on-scroll.animate-fade-left {
+            transform: translateX(-60px);
+        }
+
+        .animate-on-scroll.animate-fade-right {
+            transform: translateX(60px);
+        }
+
+        .animate-on-scroll.animate-scale {
+            transform: scale(0.8);
+        }
+
+        .animate-on-scroll.animate-slide-up {
+            transform: translateY(100px);
+        }
+
+        /* When visible */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Stagger delays for children */
+        .stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+        .stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+        .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+        .stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+        .stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+        .stagger-children > *:nth-child(6) { transition-delay: 500ms; }
+        .stagger-children > *:nth-child(7) { transition-delay: 600ms; }
+        .stagger-children > *:nth-child(8) { transition-delay: 700ms; }
+
+        /* Utility animations */
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-scale {
+            animation: pulse-scale 2s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Enhanced Card Hover Effects */
+        .feature-card,
+        .pain-card,
+        .project-card,
+        .testimonial-card,
+        .pricing-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .feature-card:hover,
+        .pain-card:hover,
+        .project-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Icon bounce on card hover */
+        .feature-card:hover .feature-icon,
+        .pain-card:hover i {
+            animation: bounceIn 0.6s ease;
+        }
+
+        /* Text highlight on hover */
+        .feature-card:hover .feature-title,
+        .pain-card:hover h3 {
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        /* Bounce up-down animation */
+        @keyframes bounceUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-8px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Hero animations */
+        .hero-badge {
+            animation: fadeInDown 0.8s ease forwards, bounceUpDown 2s ease-in-out 1s infinite;
+        }
+
+        .hero-title {
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-actions {
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        /* Gradient text shimmer */
+        .hero-title-gradient {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Section header animations */
+        .section-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .section-badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* Counter animation class */
+        .counter-value {
+            display: inline-block;
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .animate-on-scroll {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ============================================
+           SECTION STYLES
+        ============================================ */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        .section-alt {
+            background: white;
+            border-top: 3px solid var(--color-dark);
+            border-bottom: 3px solid var(--color-dark);
+        }
+
+        .section-bordered {
+            border-top: 3px solid var(--color-dark);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--color-primary);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            clip-path: var(--chamfer-sm);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .section-title span { color: var(--color-primary); }
+        .section-dark .section-title span { color: var(--color-secondary); }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-dark .section-description { color: var(--gray-400); }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(248, 250, 252, 0.8) 100%),
+                url('./pictures/gapthu2.jpg') center center / cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 22px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-primary);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title {
+            font-size: clamp(44px, 9vw, 80px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+            color: var(--color-dark);
+        }
+
+        .hero-title-gradient {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #00aaff 50%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 22px;
+            color: var(--gray-700);
+            max-width: 750px;
+            margin: 0 auto 52px;
+            line-height: 1.8;
+        }
+
+        .hero-description strong { color: var(--color-dark); }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 64px;
+        }
+
+        /* ============================================
+           CARDS
+        ============================================ */
+        .card {
+            background: var(--color-light);
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 8px 8px 0 var(--color-dark);
+        }
+
+        .card-white { background: white; }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-dark);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .card-icon-primary { background: linear-gradient(135deg, var(--color-primary) 0%, #0044cc 100%); }
+        .card-icon-secondary { background: linear-gradient(135deg, var(--color-secondary) 0%, #cc3a00 100%); }
+        .card-icon-success { background: linear-gradient(135deg, var(--color-success) 0%, #00aa55 100%); }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .card-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           GRIDS
+        ============================================ */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* ============================================
+           PAIN POINTS SECTION
+        ============================================ */
+        .pain-card {
+            background: white;
+            border: 2px solid var(--color-error);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-error);
+        }
+
+        .pain-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 51, 51, 0.1);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--color-error);
+        }
+
+        .pain-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-dark);
+        }
+
+        .pain-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           SOLUTION SECTION
+        ============================================ */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .solution-grid { grid-template-columns: 1fr; }
+        }
+
+        .solution-visual {
+            background: var(--gray-900);
+            border: 3px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            aspect-ratio: 4/3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Solution Slideshow */
+        .solution-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .solution-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .solution-slide.active {
+            opacity: 1;
+        }
+
+        /* Images in order: pm1.1, pm1.3, pm1.2, pm1.5, pm1.4, pm1.6 */
+        .solution-slide-1 { background-image: url('./pictures/pm1.1.png'); }
+        .solution-slide-2 { background-image: url('./pictures/pm1.3.png'); }
+        .solution-slide-3 { background-image: url('./pictures/pm1.2.png'); }
+        .solution-slide-4 { background-image: url('./pictures/pm1.5.png'); }
+        .solution-slide-5 { background-image: url('./pictures/pm1.4.png'); }
+        .solution-slide-6 { background-image: url('./pictures/pm1.6.png'); }
+
+        /* Bottom bar with label and arrows */
+        .solution-bottom {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+        }
+
+        .solution-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: var(--color-primary);
+            padding: 10px 20px;
+            clip-path: var(--chamfer-sm);
+        }
+
+        .solution-arrows {
+            position: absolute;
+            right: 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .solution-arrow {
+            width: 38px;
+            height: 38px;
+            background: white;
+            border: none;
+            clip-path: var(--chamfer-sm);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            transition: all 0.2s ease;
+        }
+
+        .solution-arrow svg,
+        .solution-arrow i {
+            width: 20px !important;
+            height: 20px !important;
+        }
+
+        .solution-arrow:hover {
+            background: var(--gray-100);
+            color: var(--color-dark);
+        }
+
+        .solution-content h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .solution-list {
+            list-style: none;
+        }
+
+        .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 16px;
+        }
+
+        .solution-list li:last-child { border-bottom: none; }
+
+        .solution-check {
+            width: 24px;
+            height: 24px;
+            background: var(--color-success);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           PROJECTS SECTION
+        ============================================ */
+        .projects {
+            padding: 120px 24px;
+            background: var(--color-light);
+            border-top: 3px solid var(--color-dark);
+        }
+
+        @media (max-width: 768px) {
+            .projects {
+                padding: 80px 16px;
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.8) 0%,
+                rgba(0,0,0,0) 60%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .project-location svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* Projects CTA */
+        .projects-cta {
+            margin-top: 48px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #0044cc 100%);
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 28px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            box-shadow: 6px 6px 0 var(--color-dark);
+        }
+
+        .projects-cta-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .projects-cta-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .projects-cta-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .projects-cta-text h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .projects-cta-text p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+            max-width: 480px;
+        }
+
+        .projects-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-sm);
+            text-decoration: none;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            box-shadow: 4px 4px 0 var(--color-dark);
+        }
+
+        .projects-cta-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-dark);
+        }
+
+        .projects-cta-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .projects-cta {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+                box-shadow: 4px 4px 0 var(--color-dark);
+            }
+
+            .projects-cta-content {
+                flex-direction: column;
+            }
+
+            .projects-cta-text p {
+                max-width: 100%;
+            }
+
+            .projects-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-cta {
+                padding: 20px;
+                clip-path: var(--chamfer-md);
+            }
+
+            .projects-cta-text h3 {
+                font-size: 16px;
+            }
+
+            .projects-cta-text p {
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================
+           FEATURES SECTION
+        ============================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-md);
+            padding: 24px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .feature-text {
+            font-size: 12px;
+            color: var(--gray-400);
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+        ============================================ */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        .benefit-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--color-light);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--color-primary);
+        }
+
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           PROCESS STEPS
+        ============================================ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+
+        .step-card {
+            background: var(--gray-900);
+            border: 2px solid var(--gray-800);
+            clip-path: var(--chamfer-md);
+            padding: 32px;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .step-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            font-family: var(--font-mono);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--color-primary);
+            opacity: 0.3;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        /* ============================================
+           TARGET AUDIENCE
+        ============================================ */
+        .audience-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .audience-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .audience-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .audience-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           DASHBOARD PREVIEW
+        ============================================ */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .dashboard-preview {
+            background: var(--gray-900);
+            border: 3px solid var(--gray-700);
+            clip-path: var(--chamfer-xl);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .dashboard-preview img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dashboard-tab {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-md);
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-tab::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effects */
+        .dashboard-tab:hover {
+            border-color: var(--color-primary);
+            transform: translateX(8px);
+            box-shadow: -4px 4px 20px rgba(0, 85, 255, 0.2);
+            background: var(--gray-750);
+        }
+
+        .dashboard-tab:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Active state */
+        .dashboard-tab.active {
+            border-color: var(--color-primary);
+            border-width: 3px;
+            background: rgba(0, 85, 255, 0.15);
+            transform: translateX(8px);
+            box-shadow: -4px 4px 25px rgba(0, 85, 255, 0.3);
+        }
+
+        .dashboard-tab.active::before {
+            transform: scaleY(1);
+            width: 5px;
+        }
+
+        .dashboard-tab-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .dashboard-tab-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Icon styling with animation */
+        .dashboard-tab-title svg {
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-title svg {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .dashboard-tab.active .dashboard-tab-title svg {
+            transform: rotate(10deg) scale(1.2);
+            filter: drop-shadow(0 0 6px rgba(0, 85, 255, 0.6));
+        }
+
+        /* Arrow indicator */
+        .dashboard-tab-arrow {
+            color: var(--gray-600);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            color: var(--color-primary);
+        }
+
+        .dashboard-tab.active .dashboard-tab-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+            color: var(--color-primary);
+        }
+
+        .dashboard-tab-text {
+            font-size: 13px;
+            color: var(--gray-400);
+            transition: color 0.3s ease;
+            padding-left: 28px;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-text {
+            color: var(--gray-300);
+        }
+
+        .dashboard-tab.active .dashboard-tab-text {
+            color: var(--gray-300);
+        }
+
+        /* ============================================
+           STATS SECTION
+        ============================================ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonial-card {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            padding: 32px;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            color: var(--color-warning);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ============================================
+           PARTNERS / TRUST BADGES
+        ============================================ */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background: white;
+            border: 2px solid var(--gray-200);
+            clip-path: var(--chamfer-sm);
+            padding: 16px 24px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--gray-600);
+            transition: all 0.2s;
+        }
+
+        .partner-logo:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+           FAQ SECTION
+        ============================================ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: left;
+            color: var(--color-dark);
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-icon {
+            transition: transform 0.2s;
+            color: var(--color-primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ============================================
+           COMPARISON TABLE
+        ============================================ */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-lg);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .comparison-table th {
+            background: var(--color-dark);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table th:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .highlight {
+            background: rgba(0, 85, 255, 0.05);
+        }
+
+        .check-yes {
+            color: var(--color-success);
+        }
+
+        .check-no {
+            color: var(--color-error);
+        }
+
+        .check-partial {
+            color: var(--color-warning);
+        }
+
+        /* ============================================
+           VIDEO SECTION
+        ============================================ */
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--gray-900);
+            border: 3px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .video-wrapper.playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-wrapper.playing:hover .video-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--color-primary);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 85, 255, 0.4);
+        }
+
+        .video-wrapper:hover .video-play-btn {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(0, 85, 255, 0.5);
+        }
+
+        .video-text {
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--gray-900) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: var(--gray-400);
+            margin-bottom: 48px;
+        }
+
+        .cta-form {
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-lg);
+            padding: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            background: var(--gray-900);
+            border: 2px solid var(--gray-700);
+            clip-path: var(--chamfer-sm);
+            color: white;
+            font-size: 14px;
+            font-family: var(--font-display);
+            transition: border-color 0.15s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-500);
+        }
+
+        .form-full {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 640px) {
+            .form-full { grid-column: span 1; }
+        }
+
+        .form-submit {
+            grid-column: span 2;
+            padding: 16px 32px;
+            background: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--color-primary);
+            clip-path: var(--chamfer-sm);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        @media (max-width: 640px) {
+            .form-submit { grid-column: span 1; }
+        }
+
+        .form-submit:hover {
+            background: var(--color-primary-hover);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            padding: 80px 24px 40px;
+            background: var(--color-dark);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-img {
+            height: 125px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .footer-brand-line1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 33px;
+            color: white;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-brand-line2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 23px;
+            color: var(--color-primary);
+            letter-spacing: 0.02em;
+        }
+
+        .footer-brand-line3 {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--gray-400);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .footer-brand-line4 {
+            font-family: var(--font-mono);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--gray-500);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-link:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* ============================================
+           FLOATING ZALO BUTTON
+        ============================================ */
+
+        /* Animation: Pulse Glow */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(0, 104, 255, 0.6),
+                            0 0 20px rgba(0, 104, 255, 0.4);
+                transform: scale(1.03);
+            }
+        }
+
+        /* Animation: Ring - expanding circle */
+        @keyframes ring {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Floating Button Container */
+        .floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px 8px 8px;
+            background: white;
+            border-radius: 50px;
+            border: 2px solid #0068ff;
+            box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Ring effect - pseudo element */
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid #0068ff;
+            border-radius: 50px;
+            animation: ring 1.5s ease-out infinite;
+        }
+
+        /* Hover: disable animation, scale up */
+        .floating-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 104, 255, 0.5);
+            animation: none;
+        }
+
+        .floating-btn:hover::before {
+            animation: none;
+            opacity: 0;
+        }
+
+        /* Logo Section (left) */
+        .floating-btn-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .floating-btn-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        /* Zalo Button (right) */
+        .floating-btn-zalo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #0068ff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .floating-btn:hover .floating-btn-zalo {
+            background: #0054cc;
+        }
+
+        .floating-btn-zalo svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive (Mobile) */
+        @media (max-width: 768px) {
+            .floating-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 6px 12px 6px 6px;
+                gap: 6px;
+            }
+
+            .floating-btn-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-btn-logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-btn-zalo {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .floating-btn-zalo svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="./pictures/logo.png" alt="Logo" class="nav-logo-img">
+                <div class="nav-brand">
+                    <span class="nav-brand-line1">Chí Vĩ</span>
+                    <span class="nav-brand-line2">Self Service</span>
+                    <span class="nav-brand-line3">ECO SYSTEM</span>
+                    <span class="nav-brand-line4">powered by VHITEK</span>
+                </div>
+            </a>
+            <div class="nav-sales">
+                <a href="tel:0703659168" class="nav-hotline">
+                    <div class="nav-hotline-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div class="nav-hotline-text">
+                        <span class="nav-hotline-label">Hotline 24/7</span>
+                        <span class="nav-hotline-number">0703 659 168</span>
+                    </div>
+                </a>
+                <a href="#contact" class="nav-cta">
+                    <i data-lucide="zap"></i>
+                    <span>Báo Giá Ngay</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i data-lucide="zap" style="width: 14px; height: 14px;"></i>
+                Giải Pháp Tự Phục Vụ
+            </div>
+
+            <h1 class="hero-title">
+                Thiết Bị <span class="hero-title-gradient">Thanh Toán QR</span><br>
+                Đa Năng
+            </h1>
+
+            <p class="hero-description">
+                Giải pháp thanh toán & quản lý tập trung cho <strong>các loại máy dùng xu và tiền mặt</strong>.
+                Theo dõi doanh thu realtime, quản lý từ xa và xuất hóa đơn tự động.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+                    Tư vấn miễn phí
+                </a>
+                <a href="#demo" class="btn-secondary">
+                    <i data-lucide="play-circle" style="width: 20px; height: 20px;"></i>
+                    Xem Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Vấn đề</div>
+                <h2 class="section-title">Khó khăn <span>thị trường</span></h2>
+                <p class="section-description">
+                    Các vấn đề phổ biến khi vận hành máy tự động với phương thức thu tiền truyền thống.
+                </p>
+            </div>
+
+            <div class="grid-3 stagger-children">
+                <div class="pain-card animate-on-scroll animate-fade-up">
+                    <div class="pain-icon">
+                        <i data-lucide="banknote" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Khó khăn thu tiền mặt</h3>
+                    <p class="pain-text">Phải đi thu tiền thường xuyên, rủi ro mất cắp, hỏng hóc két tiền, khách không có tiền lẻ.</p>
+                </div>
+
+                <div class="pain-card animate-on-scroll animate-fade-up">
+                    <div class="pain-icon">
+                        <i data-lucide="file-spreadsheet" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Quản lý doanh thu thủ công</h3>
+                    <p class="pain-text">Ghi chép sổ sách thủ công, khó theo dõi chính xác, tốn thời gian đối soát cuối ngày.</p>
+                </div>
+
+                <div class="pain-card animate-on-scroll animate-fade-up">
+                    <div class="pain-icon">
+                        <i data-lucide="file-warning" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="pain-title">Thiếu minh bạch & hóa đơn</h3>
+                    <p class="pain-text">Không có hóa đơn cho khách, khó kiểm soát thất thoát, không đáp ứng yêu cầu thuế.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-visual animate-on-scroll animate-fade-left">
+                    <!-- Slideshow -->
+                    <div class="solution-slideshow">
+                        <div class="solution-slide solution-slide-1 active"></div>
+                        <div class="solution-slide solution-slide-2"></div>
+                        <div class="solution-slide solution-slide-3"></div>
+                        <div class="solution-slide solution-slide-4"></div>
+                        <div class="solution-slide solution-slide-5"></div>
+                        <div class="solution-slide solution-slide-6"></div>
+                    </div>
+                    <!-- Bottom Bar: Label + Arrows -->
+                    <div class="solution-bottom">
+                        <div class="solution-label">QR Payment Device</div>
+                        <div class="solution-arrows">
+                            <button class="solution-arrow solution-arrow-prev" aria-label="Previous">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="solution-arrow solution-arrow-next" aria-label="Next">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-content animate-on-scroll animate-fade-right">
+                    <div class="section-badge">Giải pháp</div>
+                    <h3>Thiết bị thanh toán QR đa năng</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Tích hợp thanh toán QR đa ngân hàng, đa ví điện tử</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Hoạt động tự động 24/7 - không cần nhân sự</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Kết nối trực tiếp với máy móc thiết bị</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Quản lý từ xa qua dashboard web/app</span>
+                        </li>
+                        <li>
+                            <span class="solution-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></span>
+                            <span>Xuất hóa đơn điện tử tự động</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="section section-dark">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Tính năng</div>
+                <h2 class="section-title">Tính năng <span>nổi bật</span></h2>
+                <p class="section-description">
+                    Giải pháp toàn diện cho việc tự động hóa thanh toán và quản lý thiết bị.
+                </p>
+            </div>
+
+            <div class="features-grid stagger-children">
+                <!-- 1. Giám sát máy Real-time -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="activity" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Giám sát Real-time</h3>
+                    <p class="feature-text">Theo dõi trạng thái máy 24/7, cảnh báo tự động khi có sự cố</p>
+                </div>
+
+                <!-- 2. Thanh toán đa dạng -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="credit-card" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Thanh toán đa dạng</h3>
+                    <p class="feature-text">VietQR, MoMo, VNPay, tiền mặt - tất cả trong một thiết bị</p>
+                </div>
+
+                <!-- 3. Quản lý sản phẩm & tồn kho -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="package" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản lý tồn kho</h3>
+                    <p class="feature-text">Theo dõi tồn kho theo slot, cảnh báo hết hàng tự động</p>
+                </div>
+
+                <!-- 4. Báo cáo & Phân tích -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Báo cáo & Phân tích</h3>
+                    <p class="feature-text">Dashboard doanh thu, thống kê chi tiết, xuất Excel/PDF</p>
+                </div>
+
+                <!-- 5. Điều khiển máy từ xa -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="settings" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Điều khiển từ xa</h3>
+                    <p class="feature-text">Reboot, cập nhật firmware, cấu hình giá từ xa</p>
+                </div>
+
+                <!-- 6. Quản lý người dùng & Phân quyền -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Phân quyền 5 cấp</h3>
+                    <p class="feature-text">Owner, Manager, Operator, Staff, Guest - phân quyền chi tiết</p>
+                </div>
+
+                <!-- 7. Hệ thống khách hàng & Loyalty -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="gift" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Loyalty & Khuyến mãi</h3>
+                    <p class="feature-text">Tích điểm 4 tier, promo code, ví điện tử khách hàng</p>
+                </div>
+
+                <!-- 8. Hóa đơn điện tử tự động -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Hóa đơn điện tử</h3>
+                    <p class="feature-text">Xuất hóa đơn VAT tự động, tuân thủ quy định thuế</p>
+                </div>
+
+                <!-- 9. Quản lý nhóm máy -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="layout-grid" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản lý nhóm máy</h3>
+                    <p class="feature-text">Phân nhóm theo khu vực, so sánh hiệu quả giữa các nhóm</p>
+                </div>
+
+                <!-- 10. Quản trị hệ thống -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản trị hệ thống</h3>
+                    <p class="feature-text">Audit log, giám sát hạ tầng, bảo mật end-to-end</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Dự án đã triển khai</div>
+                <h2 class="section-title">Hệ thống <span>Toàn Quốc</span></h2>
+                <p class="section-description">
+                    Hơn 10.000+ thiết bị đã được triển khai thành công trên khắp cả nước
+                </p>
+            </div>
+
+            <div class="projects-grid stagger-children">
+                <!-- Project 1: Máy giặt sấy -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/maygiatsay.jpg" alt="Máy giặt sấy tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Hoàn Kiếm, Hà Nội
+                        </div>
+                        <h4 class="project-title">Máy Giặt Sấy Tự Động</h4>
+                        <p class="project-desc">Hệ thống giặt sấy tự phục vụ 24/7</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Máy trò chơi -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/maytrochoi.jpg" alt="Máy trò chơi tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Quận 7, TP.HCM
+                        </div>
+                        <h4 class="project-title">Máy Trò Chơi Giải Trí</h4>
+                        <p class="project-desc">Máy game arcade thanh toán QR</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: Máy boxing -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/mayboxing.jpg" alt="Máy boxing tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Hải Châu, Đà Nẵng
+                        </div>
+                        <h4 class="project-title">Máy Boxing Đo Lực</h4>
+                        <p class="project-desc">Máy đấm boxing giải trí tự động</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Cổng xoay NVS -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/congxoaynvs.png" alt="Cổng xoay NVS">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Ninh Kiều, Cần Thơ
+                        </div>
+                        <h4 class="project-title">Cổng Xoay Tự Động</h4>
+                        <p class="project-desc">Hệ thống kiểm soát ra vào NVS</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Máy bán hàng tự động -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/maybanhangtudong.jpg" alt="Máy bán hàng tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Nha Trang, Khánh Hòa
+                        </div>
+                        <h4 class="project-title">Máy Bán Hàng Tự Động</h4>
+                        <p class="project-desc">Máy bán nước & snack thanh toán QR</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Máy massage -->
+                <div class="project-card animate-on-scroll animate-scale">
+                    <img src="./pictures/maymassage.jpg" alt="Ghế massage tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Thủ Dầu Một, Bình Dương
+                        </div>
+                        <h4 class="project-title">Ghế Massage Tự Phục Vụ</h4>
+                        <p class="project-desc">Ghế massage thanh toán tự động</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects CTA -->
+            <div class="projects-cta reveal">
+                <div class="projects-cta-content">
+                    <div class="projects-cta-icon">
+                        <i data-lucide="help-circle"></i>
+                    </div>
+                    <div class="projects-cta-text">
+                        <h3>Thiết bị của bạn chưa có trong danh sách?</h3>
+                        <p>Bất kỳ máy móc nào sử dụng tiền xu, tiền mặt đều có thể tích hợp thanh toán QR. Liên hệ ngay để được tư vấn giải pháp phù hợp!</p>
+                    </div>
+                </div>
+                <a href="#contact" class="projects-cta-btn">
+                    <i data-lucide="message-circle"></i>
+                    Tư vấn miễn phí
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET AUDIENCE -->
+    <section class="section section-bordered">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Khách hàng</div>
+                <h2 class="section-title">Đối tượng <span>phù hợp</span></h2>
+                <p class="section-description">
+                    Giải pháp phù hợp cho nhiều mô hình kinh doanh khác nhau.
+                </p>
+            </div>
+
+            <div class="grid-4 stagger-children">
+                <div class="audience-card animate-on-scroll animate-fade-left">
+                    <div class="audience-icon">
+                        <i data-lucide="building" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Chủ khu trọ / Chung cư</h3>
+                        <p class="audience-text">Lắp đặt máy giặt, máy sấy tự phục vụ cho cư dân.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card animate-on-scroll animate-fade-up">
+                    <div class="audience-icon">
+                        <i data-lucide="store" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Trung tâm thương mại</h3>
+                        <p class="audience-text">Khu vực game, ghế massage, photobooth tự động.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card animate-on-scroll animate-fade-up">
+                    <div class="audience-icon">
+                        <i data-lucide="settings" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Đơn vị vận hành</h3>
+                        <p class="audience-text">Doanh nghiệp vận hành chuỗi máy tự động.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card animate-on-scroll animate-fade-right">
+                    <div class="audience-icon">
+                        <i data-lucide="briefcase" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div>
+                        <h3 class="audience-title">Nhà đầu tư</h3>
+                        <p class="audience-text">Đầu tư mô hình kinh doanh máy tự động thụ động.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Quản lý</div>
+                <h2 class="section-title">Hệ thống <span>quản lý</span></h2>
+                <p class="section-description">
+                    Dashboard trực quan giúp bạn quản lý toàn bộ hệ thống từ một nơi.
+                </p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Image Preview -->
+                <div class="dashboard-preview animate-on-scroll animate-fade-left">
+                    <img id="dashboard-image" src="./pictures/dashboardquanly.png" alt="Dashboard quản lý">
+                </div>
+
+                <!-- Interactive Tabs -->
+                <div class="dashboard-tabs animate-on-scroll animate-fade-right">
+                    <div class="dashboard-tab active" data-image="./pictures/dashboardquanly.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                                Dashboard quản lý
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
+                        </div>
+                        <p class="dashboard-tab-text">Giao diện trực quan, dễ sử dụng trên mọi thiết bị.</p>
+                    </div>
+
+                    <div class="dashboard-tab" data-image="./pictures/thongkedoanhthu.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="bar-chart" style="width: 18px; height: 18px;"></i>
+                                Thống kê doanh thu
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
+                        </div>
+                        <p class="dashboard-tab-text">Biểu đồ chi tiết theo ngày, tuần, tháng, năm.</p>
+                    </div>
+
+                    <div class="dashboard-tab" data-image="./pictures/quanlynhieudiem.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                                Quản lý nhiều điểm
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
+                        </div>
+                        <p class="dashboard-tab-text">Theo dõi tất cả máy tại nhiều địa điểm khác nhau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO DEMO -->
+    <section id="demo" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Demo</div>
+                <h2 class="section-title">Xem thiết bị <span>hoạt động</span></h2>
+                <p class="section-description">Video mô phỏng quy trình thanh toán thực tế</p>
+            </div>
+
+            <div class="video-container animate-on-scroll animate-scale">
+                <div class="video-wrapper" id="video-wrapper">
+                    <video id="demo-video" loop playsinline>
+                        <source src="./video/7382298414105.mp4" type="video/mp4">
+                        Trình duyệt không hỗ trợ video.
+                    </video>
+                    <div class="video-overlay" id="video-overlay">
+                        <div class="video-play-btn">
+                            <i data-lucide="play" id="video-icon" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="video-text">Nhấn để xem demo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="contact" class="cta">
+        <div class="cta-container">
+            <h2 class="cta-title">Sẵn sàng nâng cấp hệ thống của bạn?</h2>
+            <p class="cta-description">
+                Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết cho dự án của bạn.
+            </p>
+
+            <div class="cta-form">
+                <form class="form-grid">
+                    <input type="text" placeholder="Họ và tên *" class="form-input" required>
+                    <input type="tel" placeholder="Số điện thoại *" class="form-input" required>
+                    <input type="email" placeholder="Email" class="form-input form-full">
+                    <select class="form-input form-full">
+                        <option>Chọn nhu cầu của bạn</option>
+                        <option>Máy giặt / Máy sấy</option>
+                        <option>Máy trò chơi / Game</option>
+                        <option>Ghế massage</option>
+                        <option>Photobooth</option>
+                        <option>Máy bán hàng tự động</option>
+                        <option>Khác</option>
+                    </select>
+                    <textarea placeholder="Mô tả nhu cầu (số lượng máy, địa điểm...)" class="form-input form-full" rows="3"></textarea>
+                    <button type="submit" class="form-submit">
+                        <i data-lucide="send" style="width: 18px; height: 18px; margin-right: 8px;"></i>
+                        Gửi yêu cầu tư vấn
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="./pictures/logo.png" alt="Logo" class="footer-logo-img">
+                        <div class="footer-brand-text">
+                            <span class="footer-brand-line1">Chí Vĩ</span>
+                            <span class="footer-brand-line2">Self Service</span>
+                            <span class="footer-brand-line3">ECO SYSTEM</span>
+                            <span class="footer-brand-line4">powered by VHITEK</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Giải pháp thiết bị thanh toán QR đa năng cho máy tự động.
+                        Tự động hóa thu tiền, quản lý từ xa, báo cáo realtime.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Hỗ trợ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Hướng dẫn lắp đặt</a></li>
+                        <li><a href="#demo" class="footer-link">Xem demo</a></li>
+                        <li><a href="#" class="footer-link">Chính sách bảo hành</a></li>
+                        <li><a href="#contact" class="footer-link">Liên hệ hỗ trợ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Liên hệ</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:0703659168" class="footer-link">Hotline: 0703 659 168</a></li>
+                        <li><a href="mailto:congnghechivi@gmail.com" class="footer-link">congnghechivi@gmail.com</a></li>
+                        <li><a href="https://zalo.me/0703659168" class="footer-link" target="_blank">Zalo: 0703 659 168</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 QR Payment Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Thiết Bị Thanh Toán QR",
+        "description": "Thiết bị thanh toán QR đa năng cho máy tự động",
+        "brand": "QR Payment",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "VND",
+            "price": "2000000",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Thiết bị hoạt động như thế nào?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Thiết bị kết nối internet và liên kết với máy móc qua relay. Khi khách quét QR và thanh toán thành công, thiết bị sẽ tự động gửi tín hiệu kích hoạt máy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hỗ trợ những loại máy nào?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Thiết bị hỗ trợ hầu hết các loại máy tự động: máy giặt, máy sấy, máy bán hàng tự động, game arcade, ghế massage, photobooth, và nhiều loại máy khác."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ============================================
+        // SCROLL ANIMATIONS - Intersection Observer
+        // ============================================
+        (function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: unobserve after animation
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // ============================================
+        // COUNTER ANIMATION
+        // ============================================
+        (function() {
+            const counters = document.querySelectorAll('[data-counter]');
+
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-counter'));
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        element.textContent = Math.floor(current).toLocaleString('vi-VN');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target.toLocaleString('vi-VN');
+                        // Add suffix if exists
+                        const suffix = element.getAttribute('data-suffix') || '';
+                        element.textContent += suffix;
+                    }
+                };
+
+                updateCounter();
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        })();
+
+        // ============================================
+        // PARALLAX EFFECT ON HERO
+        // ============================================
+        (function() {
+            const hero = document.querySelector('.hero');
+            const heroGlow = document.querySelector('.hero-glow');
+
+            if (hero && heroGlow) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.3;
+
+                    if (scrolled < window.innerHeight) {
+                        heroGlow.style.transform = `translateY(${rate}px)`;
+                    }
+                });
+            }
+        })();
+
+        // ============================================
+        // TILT EFFECT ON CARDS
+        // ============================================
+        (function() {
+            const cards = document.querySelectorAll('.feature-card, .project-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+                });
+            });
+        })();
+
+        // ============================================
+        // MAGNETIC BUTTON EFFECT
+        // ============================================
+        (function() {
+            const magneticBtns = document.querySelectorAll('.btn-primary, .nav-cta');
+
+            magneticBtns.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
+            });
+        })();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+
+                // Reinitialize icons
+                lucide.createIcons();
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Solution Slideshow
+        (function() {
+            const slides = document.querySelectorAll('.solution-slide');
+            const prevBtn = document.querySelector('.solution-arrow-prev');
+            const nextBtn = document.querySelector('.solution-arrow-next');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            const interval = 5000; // 5 seconds
+
+            function showSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+
+            function nextSlide() { showSlide(currentSlide + 1); }
+            function prevSlide() { showSlide(currentSlide - 1); }
+
+            let autoSlide = setInterval(nextSlide, interval);
+
+            function resetAutoSlide() {
+                clearInterval(autoSlide);
+                autoSlide = setInterval(nextSlide, interval);
+            }
+
+            prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+            nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        })();
+
+        // Scroll Reveal Animation for Projects
+        (function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        })();
+
+        // Dashboard Tabs - Image Switcher
+        (function() {
+            const tabs = document.querySelectorAll('.dashboard-tab');
+            const dashboardImage = document.getElementById('dashboard-image');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Get image path from data attribute
+                    const imagePath = this.getAttribute('data-image');
+
+                    // Fade out, change image, fade in (0.5s transition)
+                    dashboardImage.style.opacity = '0';
+                    setTimeout(() => {
+                        dashboardImage.src = imagePath;
+                        dashboardImage.style.opacity = '1';
+                    }, 250);
+
+                    // Reinitialize icons
+                    lucide.createIcons();
+                });
+            });
+        })();
+
+        // Video Player - Play/Pause Toggle
+        (function() {
+            const videoWrapper = document.getElementById('video-wrapper');
+            const video = document.getElementById('demo-video');
+            const playBtn = document.querySelector('.video-play-btn');
+
+            if (videoWrapper && video && playBtn) {
+                function updateIcon(isPlaying) {
+                    playBtn.innerHTML = isPlaying
+                        ? '<i data-lucide="pause" style="width: 32px; height: 32px;"></i>'
+                        : '<i data-lucide="play" style="width: 32px; height: 32px;"></i>';
+                    lucide.createIcons();
+                }
+
+                videoWrapper.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                        videoWrapper.classList.add('playing');
+                        updateIcon(true);
+                    } else {
+                        video.pause();
+                        videoWrapper.classList.remove('playing');
+                        updateIcon(false);
+                    }
+                });
+
+                // When video ends, reset to play state
+                video.addEventListener('ended', function() {
+                    videoWrapper.classList.remove('playing');
+                    updateIcon(false);
+                });
+            }
+        })();
+    </script>
+
+    <!-- FLOATING ZALO BUTTON -->
+    <a href="https://zalo.me/0703659168"
+       class="floating-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat Zalo">
+
+        <!-- Logo/Mascot (left) -->
+        <div class="floating-btn-logo">
+            <img src="./pictures/logo.png" alt="Chí Vĩ Logo">
+        </div>
+
+        <!-- Zalo Button (right) -->
+        <div class="floating-btn-zalo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.65-2.89 7.99-3.45 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.27-.04.42z"/>
+            </svg>
+            Zalo
+        </div>
+    </a>
+
+</body>
+</html>
