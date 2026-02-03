@@ -162,29 +162,79 @@
             .nav-brand-line4 { font-size: 8px; }
         }
 
-        .nav-menu {
+        .nav-sales {
             display: flex;
             align-items: center;
-            gap: 32px;
-            list-style: none;
+            gap: 20px;
         }
 
-        .nav-link {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--color-dark);
+        .nav-hotline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
+            padding: 8px 16px 8px 8px;
+            border-radius: 50px;
+            background: rgba(0, 204, 102, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .nav-hotline:hover {
+            background: rgba(0, 204, 102, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-hotline-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            animation: pulse-phone 2s infinite;
+        }
+
+        .nav-hotline-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes pulse-phone {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 204, 102, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 204, 102, 0); }
+        }
+
+        .nav-hotline-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .nav-hotline-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-success);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            transition: color 0.15s;
         }
 
-        .nav-link:hover { color: var(--color-primary); }
+        .nav-hotline-number {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-dark);
+            letter-spacing: 0.02em;
+        }
 
         .nav-cta {
-            background: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff4800;
             color: white;
-            padding: 12px 24px;
+            padding: 14px 24px;
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
@@ -192,13 +242,25 @@
             border: 2px solid var(--color-dark);
             clip-path: var(--chamfer-sm);
             text-decoration: none;
-            transition: all 0.15s;
+            transition: all 0.2s ease;
             box-shadow: 4px 4px 0 var(--color-dark);
+            animation: cta-glow 2s infinite;
+        }
+
+        .nav-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @keyframes cta-glow {
+            0%, 100% { box-shadow: 4px 4px 0 var(--color-dark), 0 0 0 0 rgba(255, 72, 0, 0.4); }
+            50% { box-shadow: 4px 4px 0 var(--color-dark), 0 0 20px 5px rgba(255, 72, 0, 0.2); }
         }
 
         .nav-cta:hover {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 var(--color-dark);
+            background: #e04000;
         }
 
         .nav-mobile-btn {
@@ -210,8 +272,18 @@
         }
 
         @media (max-width: 1024px) {
-            .nav-menu { display: none; }
-            .nav-mobile-btn { display: block; }
+            .nav-hotline-text { display: none; }
+            .nav-cta span { display: none; }
+            .nav-cta { padding: 12px; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-sales { gap: 12px; }
+            .nav-hotline { padding: 4px; background: transparent; }
+            .nav-hotline-icon { width: 36px; height: 36px; }
+            .nav-hotline-icon svg { width: 18px; height: 18px; }
+            .nav-cta { padding: 10px; }
+            .nav-cta svg { width: 16px; height: 16px; }
         }
 
         /* ============================================
@@ -266,6 +338,293 @@
         }
 
         /* ============================================
+           SCROLL ANIMATIONS
+        ============================================ */
+
+        /* Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-scale {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Animation Classes - Initially hidden */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animate-fade-up {
+            transform: translateY(40px);
+        }
+
+        .animate-on-scroll.animate-fade-down {
+            transform: translateY(-40px);
+        }
+
+        .animate-on-scroll.animate-fade-left {
+            transform: translateX(-60px);
+        }
+
+        .animate-on-scroll.animate-fade-right {
+            transform: translateX(60px);
+        }
+
+        .animate-on-scroll.animate-scale {
+            transform: scale(0.8);
+        }
+
+        .animate-on-scroll.animate-slide-up {
+            transform: translateY(100px);
+        }
+
+        /* When visible */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Stagger delays for children */
+        .stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+        .stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+        .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+        .stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+        .stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+        .stagger-children > *:nth-child(6) { transition-delay: 500ms; }
+        .stagger-children > *:nth-child(7) { transition-delay: 600ms; }
+        .stagger-children > *:nth-child(8) { transition-delay: 700ms; }
+
+        /* Utility animations */
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-scale {
+            animation: pulse-scale 2s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Enhanced Card Hover Effects */
+        .feature-card,
+        .pain-card,
+        .project-card,
+        .testimonial-card,
+        .pricing-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .feature-card:hover,
+        .pain-card:hover,
+        .project-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Icon bounce on card hover */
+        .feature-card:hover .feature-icon,
+        .pain-card:hover i {
+            animation: bounceIn 0.6s ease;
+        }
+
+        /* Text highlight on hover */
+        .feature-card:hover .feature-title,
+        .pain-card:hover h3 {
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        /* Bounce up-down animation */
+        @keyframes bounceUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-8px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Hero animations */
+        .hero-badge {
+            animation: fadeInDown 0.8s ease forwards, bounceUpDown 2s ease-in-out 1s infinite;
+        }
+
+        .hero-title {
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-actions {
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        /* Gradient text shimmer */
+        .hero-title-gradient {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Section header animations */
+        .section-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .section-badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* Counter animation class */
+        .counter-value {
+            display: inline-block;
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .animate-on-scroll {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ============================================
            SECTION STYLES
         ============================================ */
         .section {
@@ -281,6 +640,10 @@
             background: white;
             border-top: 3px solid var(--color-dark);
             border-bottom: 3px solid var(--color-dark);
+        }
+
+        .section-bordered {
+            border-top: 3px solid var(--color-dark);
         }
 
         .container {
@@ -378,12 +741,12 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 8px 20px;
+            padding: 9px 22px;
             background: rgba(255, 255, 255, 0.95);
             border: 2px solid var(--color-primary);
             clip-path: var(--chamfer-sm);
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -393,11 +756,11 @@
         }
 
         .hero-title {
-            font-size: clamp(40px, 8vw, 72px);
+            font-size: clamp(44px, 9vw, 80px);
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: -0.03em;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             color: var(--color-dark);
         }
 
@@ -409,10 +772,10 @@
         }
 
         .hero-description {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--gray-700);
-            max-width: 700px;
-            margin: 0 auto 48px;
+            max-width: 750px;
+            margin: 0 auto 52px;
             line-height: 1.8;
         }
 
@@ -693,6 +1056,7 @@
         .projects {
             padding: 120px 24px;
             background: var(--color-light);
+            border-top: 3px solid var(--color-dark);
         }
 
         @media (max-width: 768px) {
@@ -816,30 +1180,30 @@
 
         /* Projects CTA */
         .projects-cta {
-            margin-top: 64px;
+            margin-top: 48px;
             background: linear-gradient(135deg, var(--color-primary) 0%, #0044cc 100%);
             border: 2px solid var(--color-dark);
-            clip-path: var(--chamfer-xl);
-            padding: 48px;
+            clip-path: var(--chamfer-lg);
+            padding: 28px 36px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 32px;
-            box-shadow: 8px 8px 0 var(--color-dark);
+            gap: 24px;
+            box-shadow: 6px 6px 0 var(--color-dark);
         }
 
         .projects-cta-content {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 16px;
             flex: 1;
         }
 
         .projects-cta-icon {
-            width: 64px;
-            height: 64px;
+            width: 48px;
+            height: 48px;
             background: rgba(255, 255, 255, 0.15);
-            clip-path: var(--chamfer-md);
+            clip-path: var(--chamfer-sm);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -848,39 +1212,39 @@
         }
 
         .projects-cta-icon svg {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
         }
 
         .projects-cta-text h3 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 800;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             text-transform: uppercase;
             letter-spacing: -0.01em;
         }
 
         .projects-cta-text p {
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            max-width: 500px;
+            line-height: 1.5;
+            max-width: 480px;
         }
 
         .projects-cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
+            gap: 8px;
+            padding: 12px 24px;
             background: white;
             color: var(--color-primary);
             font-weight: 700;
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border: 2px solid var(--color-dark);
-            clip-path: var(--chamfer-md);
+            clip-path: var(--chamfer-sm);
             text-decoration: none;
             transition: all 0.15s ease;
             flex-shrink: 0;
@@ -901,8 +1265,8 @@
             .projects-cta {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 32px;
-                box-shadow: 6px 6px 0 var(--color-dark);
+                padding: 24px;
+                box-shadow: 4px 4px 0 var(--color-dark);
             }
 
             .projects-cta-content {
@@ -921,28 +1285,47 @@
 
         @media (max-width: 480px) {
             .projects-cta {
-                padding: 32px 24px;
-                clip-path: var(--chamfer-lg);
+                padding: 20px;
+                clip-path: var(--chamfer-md);
             }
 
             .projects-cta-text h3 {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             .projects-cta-text p {
-                font-size: 14px;
+                font-size: 13px;
             }
         }
 
         /* ============================================
            FEATURES SECTION
         ============================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
         .feature-card {
             background: var(--gray-800);
             border: 2px solid var(--gray-700);
-            clip-path: var(--chamfer-lg);
-            padding: 32px;
+            clip-path: var(--chamfer-md);
+            padding: 24px;
             transition: all 0.2s;
+            text-align: center;
         }
 
         .feature-card:hover {
@@ -951,28 +1334,30 @@
         }
 
         .feature-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: var(--color-primary);
             clip-path: var(--chamfer-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin: 0 auto 16px;
             color: white;
         }
 
         .feature-title {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
             color: white;
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
 
         .feature-text {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--gray-400);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* ============================================
@@ -1128,110 +1513,155 @@
         .dashboard-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 24px;
+            gap: 32px;
+            align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .dashboard-grid { grid-template-columns: 1fr; }
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
         }
 
         .dashboard-preview {
             background: var(--gray-900);
-            border: 3px solid var(--color-dark);
+            border: 3px solid var(--gray-700);
             clip-path: var(--chamfer-xl);
-            padding: 24px;
-            aspect-ratio: 16/10;
-        }
-
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--gray-700);
-        }
-
-        .dashboard-title {
-            font-family: var(--font-mono);
-            font-size: 14px;
-            color: var(--color-primary);
-            text-transform: uppercase;
-        }
-
-        .dashboard-status {
+            overflow: hidden;
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: var(--color-success);
-        }
-
-        .dashboard-status::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--color-success);
-            border-radius: 50%;
-        }
-
-        .dashboard-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .dashboard-stat {
-            background: var(--gray-800);
-            clip-path: var(--chamfer-sm);
+            justify-content: center;
             padding: 16px;
-            text-align: center;
         }
 
-        .dashboard-stat-value {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            font-weight: 800;
-            color: white;
+        .dashboard-preview img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
         }
 
-        .dashboard-stat-label {
-            font-size: 11px;
-            color: var(--gray-400);
-            text-transform: uppercase;
-        }
-
-        .dashboard-features {
+        .dashboard-tabs {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .dashboard-feature {
+        .dashboard-tab {
             background: var(--gray-800);
             border: 2px solid var(--gray-700);
             clip-path: var(--chamfer-md);
-            padding: 20px;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .dashboard-feature-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 8px;
+        .dashboard-tab::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effects */
+        .dashboard-tab:hover {
+            border-color: var(--color-primary);
+            transform: translateX(8px);
+            box-shadow: -4px 4px 20px rgba(0, 85, 255, 0.2);
+            background: var(--gray-750);
+        }
+
+        .dashboard-tab:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Active state */
+        .dashboard-tab.active {
+            border-color: var(--color-primary);
+            border-width: 3px;
+            background: rgba(0, 85, 255, 0.15);
+            transform: translateX(8px);
+            box-shadow: -4px 4px 25px rgba(0, 85, 255, 0.3);
+        }
+
+        .dashboard-tab.active::before {
+            transform: scaleY(1);
+            width: 5px;
+        }
+
+        .dashboard-tab-header {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            margin-bottom: 6px;
         }
 
-        .dashboard-feature-title svg {
+        .dashboard-tab-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Icon styling with animation */
+        .dashboard-tab-title svg {
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-title svg {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .dashboard-tab.active .dashboard-tab-title svg {
+            transform: rotate(10deg) scale(1.2);
+            filter: drop-shadow(0 0 6px rgba(0, 85, 255, 0.6));
+        }
+
+        /* Arrow indicator */
+        .dashboard-tab-arrow {
+            color: var(--gray-600);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-arrow {
+            opacity: 1;
+            transform: translateX(0);
             color: var(--color-primary);
         }
 
-        .dashboard-feature-text {
+        .dashboard-tab.active .dashboard-tab-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+            color: var(--color-primary);
+        }
+
+        .dashboard-tab-text {
             font-size: 13px;
             color: var(--gray-400);
+            transition: color 0.3s ease;
+            padding-left: 28px;
+        }
+
+        .dashboard-tab:hover .dashboard-tab-text {
+            color: var(--gray-300);
+        }
+
+        .dashboard-tab.active .dashboard-tab-text {
+            color: var(--gray-300);
         }
 
         /* ============================================
@@ -1487,14 +1917,34 @@
             cursor: pointer;
         }
 
-        .video-placeholder {
+        .video-wrapper video {
             width: 100%;
             height: 100%;
+            object-fit: contain;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--color-dark) 100%);
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .video-wrapper.playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-wrapper.playing:hover .video-overlay {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .video-play-btn {
@@ -1507,11 +1957,13 @@
             justify-content: center;
             color: white;
             margin-bottom: 16px;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 85, 255, 0.4);
         }
 
         .video-wrapper:hover .video-play-btn {
             transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(0, 85, 255, 0.5);
         }
 
         .video-text {
@@ -1519,6 +1971,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* ============================================
@@ -1753,67 +2206,54 @@
         }
 
         /* ============================================
-           FLOATING CTA
-        ============================================ */
-        .floating-cta {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 99;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .floating-btn {
-            width: 56px;
-            height: 56px;
-            background: var(--color-success);
-            border: 2px solid var(--color-dark);
-            clip-path: var(--chamfer-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.15s;
-            box-shadow: 4px 4px 0 var(--color-dark);
-        }
-
-        .floating-btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--color-dark);
-        }
-
-        .floating-btn-phone {
-            background: var(--color-primary);
-        }
-
-        /* ============================================
            FLOATING ZALO BUTTON
         ============================================ */
+
+        /* Animation: Pulse Glow */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(0, 104, 255, 0.6),
+                            0 0 20px rgba(0, 104, 255, 0.4);
+                transform: scale(1.03);
+            }
+        }
+
+        /* Animation: Ring - expanding circle */
+        @keyframes ring {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Floating Button Container */
         .floating-btn {
             position: fixed;
             bottom: 24px;
             right: 24px;
             z-index: 1000;
-
             display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 6px 6px 6px;
-
+            gap: 8px;
+            padding: 8px 16px 8px 8px;
             background: white;
             border-radius: 50px;
             border: 2px solid #0068ff;
             box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
-
-            animation: pulseGlow 2s ease-in-out infinite;
+            animation: pulse-glow 2s ease-in-out infinite;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        /* Ring effect - pseudo element */
         .floating-btn::before {
             content: '';
             position: absolute;
@@ -1824,9 +2264,9 @@
             border: 2px solid #0068ff;
             border-radius: 50px;
             animation: ring 1.5s ease-out infinite;
-            pointer-events: none;
         }
 
+        /* Hover: disable animation, scale up */
         .floating-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 30px rgba(0, 104, 255, 0.5);
@@ -1838,6 +2278,7 @@
             opacity: 0;
         }
 
+        /* Logo Section (left) */
         .floating-btn-logo {
             width: 50px;
             height: 50px;
@@ -1855,14 +2296,15 @@
             object-fit: contain;
         }
 
+        /* Zalo Button (right) */
         .floating-btn-zalo {
             display: flex;
             align-items: center;
             gap: 6px;
             background: #0068ff;
             color: white;
-            padding: 10px 10px 10px 12px;
-            border-radius: 50px;
+            padding: 8px 12px;
+            border-radius: 20px;
             font-weight: 700;
             font-size: 14px;
             transition: background 0.3s ease;
@@ -1875,35 +2317,15 @@
         .floating-btn-zalo svg {
             width: 20px;
             height: 20px;
-            flex-shrink: 0;
         }
 
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
-            }
-            50% {
-                box-shadow: 0 4px 30px rgba(0, 104, 255, 0.5);
-            }
-        }
-
-        @keyframes ring {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(1.3);
-                opacity: 0;
-            }
-        }
-
+        /* Responsive (Mobile) */
         @media (max-width: 768px) {
             .floating-btn {
                 bottom: 16px;
                 right: 16px;
-                padding: 5px 6px 5px 5px;
-                gap: 5px;
+                padding: 6px 12px 6px 6px;
+                gap: 6px;
             }
 
             .floating-btn-logo {
@@ -1917,8 +2339,8 @@
             }
 
             .floating-btn-zalo {
-                padding: 8px 12px;
-                font-size: 13px;
+                padding: 6px 10px;
+                font-size: 12px;
             }
 
             .floating-btn-zalo svg {
@@ -1926,6 +2348,7 @@
                 height: 16px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -1941,14 +2364,21 @@
                     <span class="nav-brand-line4">powered by VHITEK</span>
                 </div>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#features" class="nav-link">Tính năng</a></li>
-                <li><a href="#demo" class="nav-link">Demo</a></li>
-                <li><a href="#contact" class="nav-cta">Liên hệ ngay</a></li>
-            </ul>
-            <button class="nav-mobile-btn">
-                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
-            </button>
+            <div class="nav-sales">
+                <a href="tel:0703659168" class="nav-hotline">
+                    <div class="nav-hotline-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div class="nav-hotline-text">
+                        <span class="nav-hotline-label">Hotline 24/7</span>
+                        <span class="nav-hotline-number">0703 659 168</span>
+                    </div>
+                </a>
+                <a href="#contact" class="nav-cta">
+                    <i data-lucide="zap"></i>
+                    <span>Báo Giá Ngay</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -1958,7 +2388,7 @@
         <div class="hero-container">
             <div class="hero-badge">
                 <i data-lucide="zap" style="width: 14px; height: 14px;"></i>
-                Giải pháp thanh toán tự động
+                Giải Pháp Tự Phục Vụ
             </div>
 
             <h1 class="hero-title">
@@ -1967,8 +2397,8 @@
             </h1>
 
             <p class="hero-description">
-                Tự động hóa việc thu tiền cho <strong>máy giặt, máy bán hàng, game, ghế massage</strong>.
-                Quản lý từ xa, báo cáo realtime, xuất hóa đơn tự động.
+                Giải pháp thanh toán & quản lý tập trung cho <strong>các loại máy dùng xu và tiền mặt</strong>.
+                Theo dõi doanh thu realtime, quản lý từ xa và xuất hóa đơn tự động.
             </p>
 
             <div class="hero-actions">
@@ -1987,7 +2417,7 @@
     <!-- PAIN POINTS SECTION -->
     <section class="section section-alt">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Vấn đề</div>
                 <h2 class="section-title">Khó khăn <span>thị trường</span></h2>
                 <p class="section-description">
@@ -1995,8 +2425,8 @@
                 </p>
             </div>
 
-            <div class="grid-3">
-                <div class="pain-card">
+            <div class="grid-3 stagger-children">
+                <div class="pain-card animate-on-scroll animate-fade-up">
                     <div class="pain-icon">
                         <i data-lucide="banknote" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2004,7 +2434,7 @@
                     <p class="pain-text">Phải đi thu tiền thường xuyên, rủi ro mất cắp, hỏng hóc két tiền, khách không có tiền lẻ.</p>
                 </div>
 
-                <div class="pain-card">
+                <div class="pain-card animate-on-scroll animate-fade-up">
                     <div class="pain-icon">
                         <i data-lucide="file-spreadsheet" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2012,7 +2442,7 @@
                     <p class="pain-text">Ghi chép sổ sách thủ công, khó theo dõi chính xác, tốn thời gian đối soát cuối ngày.</p>
                 </div>
 
-                <div class="pain-card">
+                <div class="pain-card animate-on-scroll animate-fade-up">
                     <div class="pain-icon">
                         <i data-lucide="file-warning" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2027,7 +2457,7 @@
     <section class="section">
         <div class="container">
             <div class="solution-grid">
-                <div class="solution-visual">
+                <div class="solution-visual animate-on-scroll animate-fade-left">
                     <!-- Slideshow -->
                     <div class="solution-slideshow">
                         <div class="solution-slide solution-slide-1 active"></div>
@@ -2050,7 +2480,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="solution-content">
+                <div class="solution-content animate-on-scroll animate-fade-right">
                     <div class="section-badge">Giải pháp</div>
                     <h3>Thiết bị thanh toán QR đa năng</h3>
                     <ul class="solution-list">
@@ -2083,7 +2513,7 @@
     <!-- FEATURES SECTION -->
     <section id="features" class="section section-dark">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Tính năng</div>
                 <h2 class="section-title">Tính năng <span>nổi bật</span></h2>
                 <p class="section-description">
@@ -2091,53 +2521,95 @@
                 </p>
             </div>
 
-            <div class="grid-3">
-                <div class="feature-card">
+            <div class="features-grid stagger-children">
+                <!-- 1. Giám sát máy Real-time -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="qr-code" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="activity" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Thanh toán QR đa nền tảng</h3>
-                    <p class="feature-text">Hỗ trợ tất cả ngân hàng nội địa, MoMo, ZaloPay, VNPay và các ví điện tử phổ biến.</p>
+                    <h3 class="feature-title">Giám sát Real-time</h3>
+                    <p class="feature-text">Theo dõi trạng thái máy 24/7, cảnh báo tự động khi có sự cố</p>
                 </div>
 
-                <div class="feature-card">
+                <!-- 2. Thanh toán đa dạng -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="cable" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="credit-card" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Kết nối trực tiếp với máy</h3>
-                    <p class="feature-text">Giao tiếp relay/pulse với máy móc, tự động kích hoạt khi thanh toán thành công.</p>
+                    <h3 class="feature-title">Thanh toán đa dạng</h3>
+                    <p class="feature-text">VietQR, MoMo, VNPay, tiền mặt - tất cả trong một thiết bị</p>
                 </div>
 
-                <div class="feature-card">
+                <!-- 3. Quản lý sản phẩm & tồn kho -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="globe" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="package" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Quản lý từ xa</h3>
-                    <p class="feature-text">Dashboard web/app để theo dõi trạng thái, cấu hình giá, cập nhật firmware từ xa.</p>
+                    <h3 class="feature-title">Quản lý tồn kho</h3>
+                    <p class="feature-text">Theo dõi tồn kho theo slot, cảnh báo hết hàng tự động</p>
                 </div>
 
-                <div class="feature-card">
+                <!-- 4. Báo cáo & Phân tích -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="bar-chart-3" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Xuất hóa đơn tự động</h3>
-                    <p class="feature-text">Tự động xuất hóa đơn điện tử cho mỗi giao dịch, đáp ứng yêu cầu thuế.</p>
+                    <h3 class="feature-title">Báo cáo & Phân tích</h3>
+                    <p class="feature-text">Dashboard doanh thu, thống kê chi tiết, xuất Excel/PDF</p>
                 </div>
 
-                <div class="feature-card">
+                <!-- 5. Điều khiển máy từ xa -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="settings" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Bảo mật & ổn định</h3>
-                    <p class="feature-text">Mã hóa dữ liệu end-to-end, uptime 99.9%, hoạt động ổn định trong mọi điều kiện.</p>
+                    <h3 class="feature-title">Điều khiển từ xa</h3>
+                    <p class="feature-text">Reboot, cập nhật firmware, cấu hình giá từ xa</p>
                 </div>
 
-                <div class="feature-card">
+                <!-- 6. Quản lý người dùng & Phân quyền -->
+                <div class="feature-card animate-on-scroll animate-scale">
                     <div class="feature-icon">
-                        <i data-lucide="bar-chart-3" style="width: 28px; height: 28px;"></i>
+                        <i data-lucide="users" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3 class="feature-title">Báo cáo realtime</h3>
-                    <p class="feature-text">Thống kê doanh thu theo ngày/tuần/tháng, xuất báo cáo Excel, biểu đồ trực quan.</p>
+                    <h3 class="feature-title">Phân quyền 5 cấp</h3>
+                    <p class="feature-text">Owner, Manager, Operator, Staff, Guest - phân quyền chi tiết</p>
+                </div>
+
+                <!-- 7. Hệ thống khách hàng & Loyalty -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="gift" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Loyalty & Khuyến mãi</h3>
+                    <p class="feature-text">Tích điểm 4 tier, promo code, ví điện tử khách hàng</p>
+                </div>
+
+                <!-- 8. Hóa đơn điện tử tự động -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Hóa đơn điện tử</h3>
+                    <p class="feature-text">Xuất hóa đơn VAT tự động, tuân thủ quy định thuế</p>
+                </div>
+
+                <!-- 9. Quản lý nhóm máy -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="layout-grid" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản lý nhóm máy</h3>
+                    <p class="feature-text">Phân nhóm theo khu vực, so sánh hiệu quả giữa các nhóm</p>
+                </div>
+
+                <!-- 10. Quản trị hệ thống -->
+                <div class="feature-card animate-on-scroll animate-scale">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3 class="feature-title">Quản trị hệ thống</h3>
+                    <p class="feature-text">Audit log, giám sát hạ tầng, bảo mật end-to-end</p>
                 </div>
             </div>
         </div>
@@ -2146,7 +2618,7 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Dự án đã triển khai</div>
                 <h2 class="section-title">Hệ thống <span>Toàn Quốc</span></h2>
                 <p class="section-description">
@@ -2154,9 +2626,9 @@
                 </p>
             </div>
 
-            <div class="projects-grid">
+            <div class="projects-grid stagger-children">
                 <!-- Project 1: Máy giặt sấy -->
-                <div class="project-card reveal delay-100">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/maygiatsay.jpg" alt="Máy giặt sấy tự động">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2169,7 +2641,7 @@
                 </div>
 
                 <!-- Project 2: Máy trò chơi -->
-                <div class="project-card reveal delay-200">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/maytrochoi.jpg" alt="Máy trò chơi tự động">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2182,7 +2654,7 @@
                 </div>
 
                 <!-- Project 3: Máy boxing -->
-                <div class="project-card reveal delay-300">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/mayboxing.jpg" alt="Máy boxing tự động">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2195,7 +2667,7 @@
                 </div>
 
                 <!-- Project 4: Cổng xoay NVS -->
-                <div class="project-card reveal delay-100">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/congxoaynvs.png" alt="Cổng xoay NVS">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2208,7 +2680,7 @@
                 </div>
 
                 <!-- Project 5: Máy bán hàng tự động -->
-                <div class="project-card reveal delay-200">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/maybanhangtudong.jpg" alt="Máy bán hàng tự động">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2221,7 +2693,7 @@
                 </div>
 
                 <!-- Project 6: Máy massage -->
-                <div class="project-card reveal delay-300">
+                <div class="project-card animate-on-scroll animate-scale">
                     <img src="../../pictures/maymassage.jpg" alt="Ghế massage tự động">
                     <div class="project-overlay">
                         <div class="project-location">
@@ -2254,9 +2726,9 @@
     </section>
 
     <!-- TARGET AUDIENCE -->
-    <section class="section">
+    <section class="section section-bordered">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Khách hàng</div>
                 <h2 class="section-title">Đối tượng <span>phù hợp</span></h2>
                 <p class="section-description">
@@ -2264,8 +2736,8 @@
                 </p>
             </div>
 
-            <div class="grid-4">
-                <div class="audience-card">
+            <div class="grid-4 stagger-children">
+                <div class="audience-card animate-on-scroll animate-fade-left">
                     <div class="audience-icon">
                         <i data-lucide="building" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2275,7 +2747,7 @@
                     </div>
                 </div>
 
-                <div class="audience-card">
+                <div class="audience-card animate-on-scroll animate-fade-up">
                     <div class="audience-icon">
                         <i data-lucide="store" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2285,7 +2757,7 @@
                     </div>
                 </div>
 
-                <div class="audience-card">
+                <div class="audience-card animate-on-scroll animate-fade-up">
                     <div class="audience-icon">
                         <i data-lucide="settings" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2295,7 +2767,7 @@
                     </div>
                 </div>
 
-                <div class="audience-card">
+                <div class="audience-card animate-on-scroll animate-fade-right">
                     <div class="audience-icon">
                         <i data-lucide="briefcase" style="width: 24px; height: 24px;"></i>
                     </div>
@@ -2311,7 +2783,7 @@
     <!-- DASHBOARD PREVIEW -->
     <section class="section section-dark">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Quản lý</div>
                 <h2 class="section-title">Hệ thống <span>quản lý</span></h2>
                 <p class="section-description">
@@ -2320,48 +2792,44 @@
             </div>
 
             <div class="dashboard-grid">
-                <div class="dashboard-preview">
-                    <div class="dashboard-header">
-                        <div class="dashboard-title">QR Payment Dashboard</div>
-                        <div class="dashboard-status">Online</div>
-                    </div>
-                    <div class="dashboard-stats">
-                        <div class="dashboard-stat">
-                            <div class="dashboard-stat-value">12</div>
-                            <div class="dashboard-stat-label">Thiết bị</div>
-                        </div>
-                        <div class="dashboard-stat">
-                            <div class="dashboard-stat-value">2.5M</div>
-                            <div class="dashboard-stat-label">Doanh thu hôm nay</div>
-                        </div>
-                        <div class="dashboard-stat">
-                            <div class="dashboard-stat-value">156</div>
-                            <div class="dashboard-stat-label">Giao dịch</div>
-                        </div>
-                    </div>
+                <!-- Image Preview -->
+                <div class="dashboard-preview animate-on-scroll animate-fade-left">
+                    <img id="dashboard-image" src="../../pictures/dashboardquanly.png" alt="Dashboard quản lý">
                 </div>
 
-                <div class="dashboard-features">
-                    <div class="dashboard-feature">
-                        <div class="dashboard-feature-title">
-                            <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
-                            Dashboard quản lý
+                <!-- Interactive Tabs -->
+                <div class="dashboard-tabs animate-on-scroll animate-fade-right">
+                    <div class="dashboard-tab active" data-image="../../pictures/dashboardquanly.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                                Dashboard quản lý
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
                         </div>
-                        <p class="dashboard-feature-text">Giao diện trực quan, dễ sử dụng trên mọi thiết bị.</p>
+                        <p class="dashboard-tab-text">Giao diện trực quan, dễ sử dụng trên mọi thiết bị.</p>
                     </div>
-                    <div class="dashboard-feature">
-                        <div class="dashboard-feature-title">
-                            <i data-lucide="bar-chart" style="width: 18px; height: 18px;"></i>
-                            Thống kê doanh thu
+
+                    <div class="dashboard-tab" data-image="../../pictures/thongkedoanhthu.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="bar-chart" style="width: 18px; height: 18px;"></i>
+                                Thống kê doanh thu
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
                         </div>
-                        <p class="dashboard-feature-text">Biểu đồ chi tiết theo ngày, tuần, tháng, năm.</p>
+                        <p class="dashboard-tab-text">Biểu đồ chi tiết theo ngày, tuần, tháng, năm.</p>
                     </div>
-                    <div class="dashboard-feature">
-                        <div class="dashboard-feature-title">
-                            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
-                            Quản lý nhiều điểm
+
+                    <div class="dashboard-tab" data-image="../../pictures/quanlynhieudiem.png">
+                        <div class="dashboard-tab-header">
+                            <div class="dashboard-tab-title">
+                                <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                                Quản lý nhiều điểm
+                            </div>
+                            <i data-lucide="chevron-right" class="dashboard-tab-arrow" style="width: 18px; height: 18px;"></i>
                         </div>
-                        <p class="dashboard-feature-text">Theo dõi tất cả máy tại nhiều địa điểm khác nhau.</p>
+                        <p class="dashboard-tab-text">Theo dõi tất cả máy tại nhiều địa điểm khác nhau.</p>
                     </div>
                 </div>
             </div>
@@ -2371,19 +2839,23 @@
     <!-- VIDEO DEMO -->
     <section id="demo" class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <div class="section-badge">Demo</div>
                 <h2 class="section-title">Xem thiết bị <span>hoạt động</span></h2>
                 <p class="section-description">Video mô phỏng quy trình thanh toán thực tế</p>
             </div>
 
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <div class="video-placeholder">
+            <div class="video-container animate-on-scroll animate-scale">
+                <div class="video-wrapper" id="video-wrapper">
+                    <video id="demo-video" loop playsinline>
+                        <source src="../../video/7382298414105.mp4" type="video/mp4">
+                        Trình duyệt không hỗ trợ video.
+                    </video>
+                    <div class="video-overlay" id="video-overlay">
                         <div class="video-play-btn">
-                            <i data-lucide="play" style="width: 32px; height: 32px;"></i>
+                            <i data-lucide="play" id="video-icon" style="width: 32px; height: 32px;"></i>
                         </div>
-                        <div class="video-text">Xem video demo</div>
+                        <div class="video-text">Nhấn để xem demo</div>
                     </div>
                 </div>
             </div>
@@ -2393,7 +2865,7 @@
     <!-- CTA SECTION -->
     <section id="contact" class="cta">
         <div class="cta-container">
-            <h2 class="cta-title">Sẵn sàng tự động hóa?</h2>
+            <h2 class="cta-title">Sẵn sàng nâng cấp hệ thống của bạn?</h2>
             <p class="cta-description">
                 Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết cho dự án của bạn.
             </p>
@@ -2440,16 +2912,6 @@
                         Giải pháp thiết bị thanh toán QR đa năng cho máy tự động.
                         Tự động hóa thu tiền, quản lý từ xa, báo cáo realtime.
                     </p>
-                </div>
-
-                <div>
-                    <h4 class="footer-heading">Sản phẩm</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Thiết bị QR Basic</a></li>
-                        <li><a href="#" class="footer-link">Thiết bị QR Pro</a></li>
-                        <li><a href="#" class="footer-link">Hệ thống quản lý</a></li>
-                        <li><a href="#" class="footer-link">API tích hợp</a></li>
-                    </ul>
                 </div>
 
                 <div>
@@ -2524,6 +2986,144 @@
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // ============================================
+        // SCROLL ANIMATIONS - Intersection Observer
+        // ============================================
+        (function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: unobserve after animation
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // ============================================
+        // COUNTER ANIMATION
+        // ============================================
+        (function() {
+            const counters = document.querySelectorAll('[data-counter]');
+
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-counter'));
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        element.textContent = Math.floor(current).toLocaleString('vi-VN');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target.toLocaleString('vi-VN');
+                        // Add suffix if exists
+                        const suffix = element.getAttribute('data-suffix') || '';
+                        element.textContent += suffix;
+                    }
+                };
+
+                updateCounter();
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        })();
+
+        // ============================================
+        // PARALLAX EFFECT ON HERO
+        // ============================================
+        (function() {
+            const hero = document.querySelector('.hero');
+            const heroGlow = document.querySelector('.hero-glow');
+
+            if (hero && heroGlow) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.3;
+
+                    if (scrolled < window.innerHeight) {
+                        heroGlow.style.transform = `translateY(${rate}px)`;
+                    }
+                });
+            }
+        })();
+
+        // ============================================
+        // TILT EFFECT ON CARDS
+        // ============================================
+        (function() {
+            const cards = document.querySelectorAll('.feature-card, .project-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+                });
+            });
+        })();
+
+        // ============================================
+        // MAGNETIC BUTTON EFFECT
+        // ============================================
+        (function() {
+            const magneticBtns = document.querySelectorAll('.btn-primary, .nav-cta');
+
+            magneticBtns.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
+            });
+        })();
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
@@ -2610,6 +3210,69 @@
 
             revealElements.forEach(el => revealObserver.observe(el));
         })();
+
+        // Dashboard Tabs - Image Switcher
+        (function() {
+            const tabs = document.querySelectorAll('.dashboard-tab');
+            const dashboardImage = document.getElementById('dashboard-image');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Get image path from data attribute
+                    const imagePath = this.getAttribute('data-image');
+
+                    // Fade out, change image, fade in (0.5s transition)
+                    dashboardImage.style.opacity = '0';
+                    setTimeout(() => {
+                        dashboardImage.src = imagePath;
+                        dashboardImage.style.opacity = '1';
+                    }, 250);
+
+                    // Reinitialize icons
+                    lucide.createIcons();
+                });
+            });
+        })();
+
+        // Video Player - Play/Pause Toggle
+        (function() {
+            const videoWrapper = document.getElementById('video-wrapper');
+            const video = document.getElementById('demo-video');
+            const playBtn = document.querySelector('.video-play-btn');
+
+            if (videoWrapper && video && playBtn) {
+                function updateIcon(isPlaying) {
+                    playBtn.innerHTML = isPlaying
+                        ? '<i data-lucide="pause" style="width: 32px; height: 32px;"></i>'
+                        : '<i data-lucide="play" style="width: 32px; height: 32px;"></i>';
+                    lucide.createIcons();
+                }
+
+                videoWrapper.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                        videoWrapper.classList.add('playing');
+                        updateIcon(true);
+                    } else {
+                        video.pause();
+                        videoWrapper.classList.remove('playing');
+                        updateIcon(false);
+                    }
+                });
+
+                // When video ends, reset to play state
+                video.addEventListener('ended', function() {
+                    videoWrapper.classList.remove('playing');
+                    updateIcon(false);
+                });
+            }
+        })();
     </script>
 
     <!-- FLOATING ZALO BUTTON -->
@@ -2619,19 +3282,19 @@
        rel="noopener noreferrer"
        aria-label="Chat Zalo">
 
-        <!-- Logo/Mascot bên trái -->
+        <!-- Logo/Mascot (left) -->
         <div class="floating-btn-logo">
-            <img src="../../pictures/logo.png" alt="Logo">
+            <img src="../../pictures/logo.png" alt="Chí Vĩ Logo">
         </div>
 
-        <!-- Nút Zalo bên phải -->
+        <!-- Zalo Button (right) -->
         <div class="floating-btn-zalo">
-            <!-- Zalo Icon SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.74 3.99-1.74 6.65-2.89 7.99-3.45 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.27-.04.42z"/>
             </svg>
             Zalo
         </div>
     </a>
+
 </body>
 </html>
