@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiết Bị Thanh Toán QR | Giải Pháp Tự Động Hóa Thanh Toán</title>
+    <title>Thiết Bị Thanh Toán QR | Chí Vĩ - Giải Pháp Tự Phục Vụ</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Thiết bị thanh toán QR đa năng cho máy giặt, máy bán hàng tự động, game, ghế massage. Tự động hóa thu tiền, quản lý từ xa, xuất hóa đơn điện tử.">
-    <meta name="keywords" content="thiết bị thanh toán QR, máy thanh toán tự động, thanh toán không tiền mặt, QR payment device, máy giặt tự động">
-    <meta name="author" content="QR Payment Solutions">
+    <meta name="description" content="Công ty TNHH TM DV Công Nghệ Tự Phục Vụ Chí Vĩ - Thiết bị thanh toán QR đa năng cho máy giặt, máy bán hàng tự động, game, ghế massage. Tự phục vụ thu tiền, quản lý từ xa.">
+    <meta name="keywords" content="thiết bị thanh toán QR, máy thanh toán tự động, thanh toán không tiền mặt, QR payment device, máy giặt tự động, Chí Vĩ">
+    <meta name="author" content="Công ty TNHH TM DV Công Nghệ Tự Phục Vụ Chí Vĩ">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Thiết Bị Thanh Toán QR - Giải Pháp Tự Động Hóa">
-    <meta property="og:description" content="Tự động hóa thanh toán cho máy giặt, game, ghế massage. Quản lý từ xa, báo cáo realtime.">
+    <meta property="og:title" content="Thiết Bị Thanh Toán QR | Chí Vĩ - Giải Pháp Tự Phục Vụ">
+    <meta property="og:description" content="Công ty Chí Vĩ - Tự phục vụ thanh toán cho máy giặt, game, ghế massage. Quản lý từ xa, báo cáo realtime.">
     <meta property="og:image" content="/images/og-qr-payment.jpg">
 
     <!-- Google Fonts -->
@@ -86,9 +86,9 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--color-dark);
+            border-bottom: 2px solid var(--gray-200);
         }
 
         .nav-container {
@@ -98,7 +98,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            height: 96px;
         }
 
         .nav-logo {
@@ -108,28 +108,59 @@
             text-decoration: none;
         }
 
-        .nav-logo-mark {
-            width: 44px;
-            height: 44px;
-            background: var(--color-primary);
-            color: white;
-            clip-path: var(--chamfer-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-mono);
-            font-weight: 800;
-            font-size: 16px;
+        .nav-logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-brand {
-            font-weight: 800;
-            font-size: 18px;
-            letter-spacing: -0.02em;
-            color: var(--color-dark);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
         }
 
-        .nav-brand span { color: var(--color-primary); }
+        .nav-brand-line1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--color-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-brand-line2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--color-primary);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-brand-line3 {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--gray-600);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .nav-brand-line4 {
+            font-family: var(--font-mono);
+            font-weight: 500;
+            font-size: 9px;
+            color: var(--gray-500);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { height: 76px; padding: 0 16px; }
+            .nav-logo-img { height: 60px; }
+            .nav-brand-line1 { font-size: 16px; }
+            .nav-brand-line2 { font-size: 11px; }
+            .nav-brand-line3 { font-size: 10px; }
+            .nav-brand-line4 { font-size: 8px; }
+        }
 
         .nav-menu {
             display: flex;
@@ -303,9 +334,15 @@
         ============================================ */
         .hero {
             position: relative;
-            padding: 160px 24px 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--color-light) 0%, var(--gray-100) 100%);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(248, 250, 252, 0.8) 100%),
+                url('../../pictures/gapthu2.jpg') center center / cover no-repeat;
         }
 
         .hero::before {
@@ -325,7 +362,7 @@
             right: -200px;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 85, 255, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.25) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -342,8 +379,8 @@
             align-items: center;
             gap: 12px;
             padding: 8px 20px;
-            background: white;
-            border: 2px solid var(--color-dark);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid var(--color-primary);
             clip-path: var(--chamfer-sm);
             font-family: var(--font-mono);
             font-size: 12px;
@@ -352,6 +389,7 @@
             letter-spacing: 0.1em;
             color: var(--color-primary);
             margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-title {
@@ -360,6 +398,7 @@
             line-height: 1.1;
             letter-spacing: -0.03em;
             margin-bottom: 24px;
+            color: var(--color-dark);
         }
 
         .hero-title-gradient {
@@ -371,7 +410,7 @@
 
         .hero-description {
             font-size: 20px;
-            color: var(--gray-600);
+            color: var(--gray-700);
             max-width: 700px;
             margin: 0 auto 48px;
             line-height: 1.8;
@@ -519,26 +558,99 @@
             background: var(--gray-900);
             border: 3px solid var(--color-dark);
             clip-path: var(--chamfer-xl);
-            padding: 40px;
             aspect-ratio: 4/3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .solution-device {
-            font-size: 80px;
-            margin-bottom: 16px;
+        /* Solution Slideshow */
+        .solution-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .solution-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .solution-slide.active {
+            opacity: 1;
+        }
+
+        /* Images in order: pm1.1, pm1.3, pm1.2, pm1.5, pm1.4, pm1.6 */
+        .solution-slide-1 { background-image: url('../../pictures/pm1.1.png'); }
+        .solution-slide-2 { background-image: url('../../pictures/pm1.3.png'); }
+        .solution-slide-3 { background-image: url('../../pictures/pm1.2.png'); }
+        .solution-slide-4 { background-image: url('../../pictures/pm1.5.png'); }
+        .solution-slide-5 { background-image: url('../../pictures/pm1.4.png'); }
+        .solution-slide-6 { background-image: url('../../pictures/pm1.6.png'); }
+
+        /* Bottom bar with label and arrows */
+        .solution-bottom {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
         }
 
         .solution-label {
             font-family: var(--font-mono);
-            font-size: 14px;
-            color: var(--color-primary);
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
+            background: var(--color-primary);
+            padding: 10px 20px;
+            clip-path: var(--chamfer-sm);
+        }
+
+        .solution-arrows {
+            position: absolute;
+            right: 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .solution-arrow {
+            width: 38px;
+            height: 38px;
+            background: white;
+            border: none;
+            clip-path: var(--chamfer-sm);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            transition: all 0.2s ease;
+        }
+
+        .solution-arrow svg,
+        .solution-arrow i {
+            width: 20px !important;
+            height: 20px !important;
+        }
+
+        .solution-arrow:hover {
+            background: var(--gray-100);
+            color: var(--color-dark);
         }
 
         .solution-content h3 {
@@ -576,33 +688,250 @@
         }
 
         /* ============================================
-           INTEGRATION MODELS
+           PROJECTS SECTION
         ============================================ */
-        .integration-card {
-            background: white;
-            border: 2px solid var(--gray-300);
-            clip-path: var(--chamfer-md);
+        .projects {
+            padding: 120px 24px;
+            background: var(--color-light);
+        }
+
+        @media (max-width: 768px) {
+            .projects {
+                padding: 80px 16px;
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.8) 0%,
+                rgba(0,0,0,0) 60%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             padding: 24px;
-            text-align: center;
-            transition: all 0.2s;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .integration-card:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-4px);
-            box-shadow: 4px 4px 0 var(--color-primary);
+        .project-card:hover .project-overlay {
+            opacity: 1;
         }
 
-        .integration-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
+        .project-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
         }
 
-        .integration-name {
+        .project-location svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
             font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* Projects CTA */
+        .projects-cta {
+            margin-top: 64px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #0044cc 100%);
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-xl);
+            padding: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            box-shadow: 8px 8px 0 var(--color-dark);
+        }
+
+        .projects-cta-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .projects-cta-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.15);
+            clip-path: var(--chamfer-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .projects-cta-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .projects-cta-text h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .projects-cta-text p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .projects-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: white;
+            color: var(--color-primary);
             font-weight: 700;
+            font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            border: 2px solid var(--color-dark);
+            clip-path: var(--chamfer-md);
+            text-decoration: none;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            box-shadow: 4px 4px 0 var(--color-dark);
+        }
+
+        .projects-cta-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-dark);
+        }
+
+        .projects-cta-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .projects-cta {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 32px;
+                box-shadow: 6px 6px 0 var(--color-dark);
+            }
+
+            .projects-cta-content {
+                flex-direction: column;
+            }
+
+            .projects-cta-text p {
+                max-width: 100%;
+            }
+
+            .projects-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-cta {
+                padding: 32px 24px;
+                clip-path: var(--chamfer-lg);
+            }
+
+            .projects-cta-text h3 {
+                font-size: 20px;
+            }
+
+            .projects-cta-text p {
+                font-size: 14px;
+            }
         }
 
         /* ============================================
@@ -1308,9 +1637,8 @@
            FOOTER
         ============================================ */
         .footer {
-            padding: 60px 24px 30px;
-            background: black;
-            border-top: 3px solid var(--color-dark);
+            padding: 80px 24px 40px;
+            background: var(--color-dark);
         }
 
         .footer-container {
@@ -1320,7 +1648,7 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 48px;
         }
@@ -1333,26 +1661,52 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
-        .footer-logo {
-            width: 44px;
-            height: 44px;
-            background: var(--color-primary);
-            clip-path: var(--chamfer-sm);
+        .footer-logo-img {
+            height: 125px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-brand-text {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-mono);
-            font-weight: 800;
-            color: white;
+            flex-direction: column;
+            line-height: 1.3;
         }
 
-        .footer-brand-name {
-            font-size: 20px;
+        .footer-brand-line1 {
+            font-family: var(--font-display);
             font-weight: 800;
+            font-size: 33px;
             color: white;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-brand-line2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 23px;
+            color: var(--color-primary);
+            letter-spacing: 0.02em;
+        }
+
+        .footer-brand-line3 {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--gray-400);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .footer-brand-line4 {
+            font-family: var(--font-mono);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--gray-500);
+            letter-spacing: 0.05em;
         }
 
         .footer-description {
@@ -1434,6 +1788,144 @@
         .floating-btn-phone {
             background: var(--color-primary);
         }
+
+        /* ============================================
+           FLOATING ZALO BUTTON
+        ============================================ */
+        .floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 6px 6px 6px;
+
+            background: white;
+            border-radius: 50px;
+            border: 2px solid #0068ff;
+            box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
+
+            animation: pulseGlow 2s ease-in-out infinite;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid #0068ff;
+            border-radius: 50px;
+            animation: ring 1.5s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 104, 255, 0.5);
+            animation: none;
+        }
+
+        .floating-btn:hover::before {
+            animation: none;
+            opacity: 0;
+        }
+
+        .floating-btn-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .floating-btn-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .floating-btn-zalo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #0068ff;
+            color: white;
+            padding: 10px 10px 10px 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .floating-btn:hover .floating-btn-zalo {
+            background: #0054cc;
+        }
+
+        .floating-btn-zalo svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(0, 104, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(0, 104, 255, 0.5);
+            }
+        }
+
+        @keyframes ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 5px 6px 5px 5px;
+                gap: 5px;
+            }
+
+            .floating-btn-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-btn-logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-btn-zalo {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .floating-btn-zalo svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1441,14 +1933,17 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <div class="nav-logo-mark">QR</div>
-                <div class="nav-brand">QR <span>PAYMENT</span></div>
+                <img src="../../pictures/logo.png" alt="Logo" class="nav-logo-img">
+                <div class="nav-brand">
+                    <span class="nav-brand-line1">Chí Vĩ</span>
+                    <span class="nav-brand-line2">Self Service</span>
+                    <span class="nav-brand-line3">ECO SYSTEM</span>
+                    <span class="nav-brand-line4">powered by VHITEK</span>
+                </div>
             </a>
             <ul class="nav-menu">
                 <li><a href="#features" class="nav-link">Tính năng</a></li>
-                <li><a href="#benefits" class="nav-link">Lợi ích</a></li>
-                <li><a href="#process" class="nav-link">Quy trình</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
                 <li><a href="#contact" class="nav-cta">Liên hệ ngay</a></li>
             </ul>
             <button class="nav-mobile-btn">
@@ -1533,8 +2028,27 @@
         <div class="container">
             <div class="solution-grid">
                 <div class="solution-visual">
-                    <div class="solution-device">📱</div>
-                    <div class="solution-label">QR Payment Device</div>
+                    <!-- Slideshow -->
+                    <div class="solution-slideshow">
+                        <div class="solution-slide solution-slide-1 active"></div>
+                        <div class="solution-slide solution-slide-2"></div>
+                        <div class="solution-slide solution-slide-3"></div>
+                        <div class="solution-slide solution-slide-4"></div>
+                        <div class="solution-slide solution-slide-5"></div>
+                        <div class="solution-slide solution-slide-6"></div>
+                    </div>
+                    <!-- Bottom Bar: Label + Arrows -->
+                    <div class="solution-bottom">
+                        <div class="solution-label">QR Payment Device</div>
+                        <div class="solution-arrows">
+                            <button class="solution-arrow solution-arrow-prev" aria-label="Previous">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="solution-arrow solution-arrow-next" aria-label="Next">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="solution-content">
                     <div class="section-badge">Giải pháp</div>
@@ -1561,42 +2075,6 @@
                             <span>Xuất hóa đơn điện tử tự động</span>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTEGRATION MODELS -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Ứng dụng</div>
-                <h2 class="section-title">Mô hình <span>tích hợp</span></h2>
-                <p class="section-description">
-                    Thiết bị thanh toán QR có thể tích hợp với nhiều loại máy tự động khác nhau.
-                </p>
-            </div>
-
-            <div class="grid-5">
-                <div class="integration-card">
-                    <div class="integration-icon">🧺</div>
-                    <div class="integration-name">Máy giặt - Máy sấy</div>
-                </div>
-                <div class="integration-card">
-                    <div class="integration-icon">🎮</div>
-                    <div class="integration-name">Máy trò chơi / Game</div>
-                </div>
-                <div class="integration-card">
-                    <div class="integration-icon">💆</div>
-                    <div class="integration-name">Ghế massage</div>
-                </div>
-                <div class="integration-card">
-                    <div class="integration-icon">📸</div>
-                    <div class="integration-name">Photobooth</div>
-                </div>
-                <div class="integration-card">
-                    <div class="integration-icon">🏭</div>
-                    <div class="integration-name">Máy tự động khác</div>
                 </div>
             </div>
         </div>
@@ -1665,92 +2143,112 @@
         </div>
     </section>
 
-    <!-- BENEFITS SECTION -->
-    <section id="benefits" class="section">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Lợi ích</div>
-                <h2 class="section-title">Lợi ích <span>mang lại</span></h2>
+            <div class="section-header reveal">
+                <div class="section-badge">Dự án đã triển khai</div>
+                <h2 class="section-title">Hệ thống <span>Toàn Quốc</span></h2>
                 <p class="section-description">
-                    Những giá trị thực tế khi áp dụng thiết bị thanh toán QR cho doanh nghiệp của bạn.
+                    Hơn 10.000+ thiết bị đã được triển khai thành công trên khắp cả nước
                 </p>
             </div>
 
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i data-lucide="trending-up" style="width: 32px; height: 32px;"></i>
+            <div class="projects-grid">
+                <!-- Project 1: Máy giặt sấy -->
+                <div class="project-card reveal delay-100">
+                    <img src="../../pictures/maygiatsay.jpg" alt="Máy giặt sấy tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Hoàn Kiếm, Hà Nội
+                        </div>
+                        <h4 class="project-title">Máy Giặt Sấy Tự Động</h4>
+                        <p class="project-desc">Hệ thống giặt sấy tự phục vụ 24/7</p>
                     </div>
-                    <h3 class="benefit-title">Tăng doanh thu</h3>
-                    <p class="benefit-text">Khách hàng dễ dàng thanh toán hơn, tăng tỷ lệ sử dụng dịch vụ.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i data-lucide="shield" style="width: 32px; height: 32px;"></i>
+                <!-- Project 2: Máy trò chơi -->
+                <div class="project-card reveal delay-200">
+                    <img src="../../pictures/maytrochoi.jpg" alt="Máy trò chơi tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Quận 7, TP.HCM
+                        </div>
+                        <h4 class="project-title">Máy Trò Chơi Giải Trí</h4>
+                        <p class="project-desc">Máy game arcade thanh toán QR</p>
                     </div>
-                    <h3 class="benefit-title">Giảm thất thoát</h3>
-                    <p class="benefit-text">Loại bỏ rủi ro mất cắp tiền mặt, mọi giao dịch được ghi nhận.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i data-lucide="users" style="width: 32px; height: 32px;"></i>
+                <!-- Project 3: Máy boxing -->
+                <div class="project-card reveal delay-300">
+                    <img src="../../pictures/mayboxing.jpg" alt="Máy boxing tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Hải Châu, Đà Nẵng
+                        </div>
+                        <h4 class="project-title">Máy Boxing Đo Lực</h4>
+                        <p class="project-desc">Máy đấm boxing giải trí tự động</p>
                     </div>
-                    <h3 class="benefit-title">Tiết kiệm nhân sự</h3>
-                    <p class="benefit-text">Không cần người thu tiền, quản lý từ xa mọi lúc mọi nơi.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i data-lucide="maximize" style="width: 32px; height: 32px;"></i>
+                <!-- Project 4: Cổng xoay NVS -->
+                <div class="project-card reveal delay-100">
+                    <img src="../../pictures/congxoaynvs.png" alt="Cổng xoay NVS">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Ninh Kiều, Cần Thơ
+                        </div>
+                        <h4 class="project-title">Cổng Xoay Tự Động</h4>
+                        <p class="project-desc">Hệ thống kiểm soát ra vào NVS</p>
                     </div>
-                    <h3 class="benefit-title">Dễ mở rộng</h3>
-                    <p class="benefit-text">Thêm máy mới dễ dàng, quản lý tập trung nhiều điểm.</p>
+                </div>
+
+                <!-- Project 5: Máy bán hàng tự động -->
+                <div class="project-card reveal delay-200">
+                    <img src="../../pictures/maybanhangtudong.jpg" alt="Máy bán hàng tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Nha Trang, Khánh Hòa
+                        </div>
+                        <h4 class="project-title">Máy Bán Hàng Tự Động</h4>
+                        <p class="project-desc">Máy bán nước & snack thanh toán QR</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Máy massage -->
+                <div class="project-card reveal delay-300">
+                    <img src="../../pictures/maymassage.jpg" alt="Ghế massage tự động">
+                    <div class="project-overlay">
+                        <div class="project-location">
+                            <i data-lucide="map-pin"></i>
+                            Thủ Dầu Một, Bình Dương
+                        </div>
+                        <h4 class="project-title">Ghế Massage Tự Phục Vụ</h4>
+                        <p class="project-desc">Ghế massage thanh toán tự động</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- PROCESS SECTION -->
-    <section id="process" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Quy trình</div>
-                <h2 class="section-title">Cách <span>hoạt động</span></h2>
-                <p class="section-description">
-                    Quy trình thanh toán đơn giản, nhanh chóng chỉ trong vài giây.
-                </p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <i data-lucide="scan" class="step-icon"></i>
-                    <h3 class="step-title">Quét QR</h3>
-                    <p class="step-text">Khách hàng mở app ngân hàng, quét mã QR trên thiết bị.</p>
+            <!-- Projects CTA -->
+            <div class="projects-cta reveal">
+                <div class="projects-cta-content">
+                    <div class="projects-cta-icon">
+                        <i data-lucide="help-circle"></i>
+                    </div>
+                    <div class="projects-cta-text">
+                        <h3>Thiết bị của bạn chưa có trong danh sách?</h3>
+                        <p>Bất kỳ máy móc nào sử dụng tiền xu, tiền mặt đều có thể tích hợp thanh toán QR. Liên hệ ngay để được tư vấn giải pháp phù hợp!</p>
+                    </div>
                 </div>
-
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <i data-lucide="credit-card" class="step-icon"></i>
-                    <h3 class="step-title">Thanh toán</h3>
-                    <p class="step-text">Xác nhận số tiền và hoàn tất thanh toán trong vài giây.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <i data-lucide="play" class="step-icon"></i>
-                    <h3 class="step-title">Máy hoạt động</h3>
-                    <p class="step-text">Thiết bị tự động kích hoạt máy sau khi nhận được tiền.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">04</div>
-                    <i data-lucide="receipt" class="step-icon"></i>
-                    <h3 class="step-title">Xuất hóa đơn</h3>
-                    <p class="step-text">Hóa đơn điện tử được gửi tự động qua SMS/email.</p>
-                </div>
+                <a href="#contact" class="projects-cta-btn">
+                    <i data-lucide="message-circle"></i>
+                    Tư vấn miễn phí
+                </a>
             </div>
         </div>
     </section>
@@ -1870,124 +2368,6 @@
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Thống kê</div>
-                <h2 class="section-title">Con số <span>ấn tượng</span></h2>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value" data-count="500">500+</div>
-                    <div class="stat-label">Thiết bị đã lắp đặt</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">10M+</div>
-                    <div class="stat-label">Giao dịch thành công</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">99.9%</div>
-                    <div class="stat-label">Thời gian hoạt động</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">200+</div>
-                    <div class="stat-label">Khách hàng tin dùng</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Đánh giá</div>
-                <h2 class="section-title">Khách hàng <span>nói gì</span></h2>
-            </div>
-
-            <div class="grid-3">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                    </div>
-                    <p class="testimonial-text">"Từ khi lắp thiết bị thanh toán QR, doanh thu tăng 30% vì khách hàng không còn phải lo tiền lẻ. Quản lý từ xa rất tiện lợi."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">TH</div>
-                        <div>
-                            <div class="testimonial-name">Anh Trần Hùng</div>
-                            <div class="testimonial-role">Chủ chuỗi tiệm giặt tự động</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                    </div>
-                    <p class="testimonial-text">"Hệ thống báo cáo chi tiết giúp tôi kiểm soát doanh thu từng máy. Không còn lo thất thoát như trước."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">ML</div>
-                        <div>
-                            <div class="testimonial-name">Chị Mai Lan</div>
-                            <div class="testimonial-role">Quản lý khu game center</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
-                    </div>
-                    <p class="testimonial-text">"Lắp đặt nhanh, support nhiệt tình. Cư dân chung cư rất thích vì không cần mang tiền mặt."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">VN</div>
-                        <div>
-                            <div class="testimonial-name">Anh Văn Nam</div>
-                            <div class="testimonial-role">BQT Chung cư Sunrise</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PARTNERS -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Đối tác <span>hỗ trợ</span></h2>
-                <p class="section-description">Hỗ trợ thanh toán qua 40+ ngân hàng và ví điện tử</p>
-            </div>
-
-            <div class="partners-grid">
-                <div class="partner-logo">VietQR</div>
-                <div class="partner-logo">NAPAS</div>
-                <div class="partner-logo">MoMo</div>
-                <div class="partner-logo">ZaloPay</div>
-                <div class="partner-logo">VNPay</div>
-                <div class="partner-logo">Vietcombank</div>
-                <div class="partner-logo">Techcombank</div>
-                <div class="partner-logo">MB Bank</div>
-                <div class="partner-logo">VPBank</div>
-                <div class="partner-logo">BIDV</div>
-            </div>
-        </div>
-    </section>
-
     <!-- VIDEO DEMO -->
     <section id="demo" class="section">
         <div class="container">
@@ -2004,139 +2384,6 @@
                             <i data-lucide="play" style="width: 32px; height: 32px;"></i>
                         </div>
                         <div class="video-text">Xem video demo</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON TABLE -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">So sánh</div>
-                <h2 class="section-title">So sánh <span>phương thức</span></h2>
-            </div>
-
-            <div style="overflow-x: auto;">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Tính năng</th>
-                            <th class="highlight">QR Payment</th>
-                            <th>Tiền mặt</th>
-                            <th>Thẻ từ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Thu tiền tự động</td>
-                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td>Không cần nhân sự</td>
-                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td>Báo cáo realtime</td>
-                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td>Hóa đơn tự động</td>
-                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td>Quản lý từ xa</td>
-                            <td class="highlight"><span class="check-yes"><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-no"><i data-lucide="x-circle" style="width: 20px; height: 20px;"></i></span></td>
-                            <td><span class="check-partial"><i data-lucide="minus-circle" style="width: 20px; height: 20px;"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td>Chi phí vận hành</td>
-                            <td class="highlight"><strong style="color: var(--color-success);">Thấp</strong></td>
-                            <td><strong style="color: var(--color-error);">Cao</strong></td>
-                            <td><strong style="color: var(--color-warning);">Trung bình</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">FAQ</div>
-                <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
-            </div>
-
-            <div class="faq-list">
-                <div class="faq-item active">
-                    <button class="faq-question">
-                        Thiết bị hoạt động như thế nào?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Thiết bị kết nối internet (4G/WiFi) và liên kết với máy móc qua relay. Khi khách quét QR và thanh toán thành công, thiết bị sẽ tự động gửi tín hiệu kích hoạt máy. Mọi giao dịch được ghi nhận và đồng bộ lên hệ thống quản lý realtime.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Hỗ trợ những loại máy nào?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Thiết bị hỗ trợ hầu hết các loại máy tự động có thể điều khiển bằng relay/pulse: máy giặt, máy sấy, máy bán hàng tự động, game arcade, ghế massage, photobooth, máy rửa xe, và nhiều loại máy khác.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Chi phí lắp đặt và bảo trì?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Chi phí thiết bị từ 2-5 triệu đồng tùy model. Phí dịch vụ hàng tháng từ 50-100k/thiết bị bao gồm 4G, hệ thống quản lý và hỗ trợ kỹ thuật. Không mất phí lắp đặt ban đầu.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Thời gian lắp đặt bao lâu?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Thời gian lắp đặt trung bình 30-60 phút/máy. Đội ngũ kỹ thuật sẽ hướng dẫn sử dụng và cấu hình hệ thống ngay sau khi hoàn tất.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Có cần kết nối internet không?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Có, thiết bị cần kết nối internet để xác nhận thanh toán và đồng bộ dữ liệu. Thiết bị có sẵn SIM 4G hoặc có thể kết nối WiFi tại điểm lắp đặt.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Chính sách bảo hành?
-                        <i data-lucide="chevron-down" class="faq-icon" style="width: 20px; height: 20px;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Bảo hành phần cứng 12 tháng. Hỗ trợ kỹ thuật từ xa 24/7. Đổi thiết bị mới nếu lỗi do nhà sản xuất. Cập nhật firmware miễn phí trọn đời.
                     </div>
                 </div>
             </div>
@@ -2181,8 +2428,13 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        <div class="footer-logo">QR</div>
-                        <div class="footer-brand-name">QR Payment</div>
+                        <img src="../../pictures/logo.png" alt="Logo" class="footer-logo-img">
+                        <div class="footer-brand-text">
+                            <span class="footer-brand-line1">Chí Vĩ</span>
+                            <span class="footer-brand-line2">Self Service</span>
+                            <span class="footer-brand-line3">ECO SYSTEM</span>
+                            <span class="footer-brand-line4">powered by VHITEK</span>
+                        </div>
                     </div>
                     <p class="footer-description">
                         Giải pháp thiết bị thanh toán QR đa năng cho máy tự động.
@@ -2204,7 +2456,7 @@
                     <h4 class="footer-heading">Hỗ trợ</h4>
                     <ul class="footer-links">
                         <li><a href="#" class="footer-link">Hướng dẫn lắp đặt</a></li>
-                        <li><a href="#faq" class="footer-link">Câu hỏi thường gặp</a></li>
+                        <li><a href="#demo" class="footer-link">Xem demo</a></li>
                         <li><a href="#" class="footer-link">Chính sách bảo hành</a></li>
                         <li><a href="#contact" class="footer-link">Liên hệ hỗ trợ</a></li>
                     </ul>
@@ -2213,9 +2465,9 @@
                 <div>
                     <h4 class="footer-heading">Liên hệ</h4>
                     <ul class="footer-links">
-                        <li><a href="tel:19001234" class="footer-link">Hotline: 1900 1234</a></li>
-                        <li><a href="mailto:info@qrpayment.vn" class="footer-link">info@qrpayment.vn</a></li>
-                        <li><a href="#" class="footer-link">Zalo: 0901 234 567</a></li>
+                        <li><a href="tel:0703659168" class="footer-link">Hotline: 0703 659 168</a></li>
+                        <li><a href="mailto:congnghechivi@gmail.com" class="footer-link">congnghechivi@gmail.com</a></li>
+                        <li><a href="https://zalo.me/0703659168" class="footer-link" target="_blank">Zalo: 0703 659 168</a></li>
                     </ul>
                 </div>
             </div>
@@ -2225,16 +2477,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- FLOATING CTA -->
-    <div class="floating-cta">
-        <a href="tel:19001234" class="floating-btn floating-btn-phone" title="Gọi ngay">
-            <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
-        </a>
-        <a href="https://zalo.me/0901234567" class="floating-btn" title="Chat Zalo" target="_blank">
-            <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
-        </a>
-    </div>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -2322,6 +2564,74 @@
                 nav.style.boxShadow = 'none';
             }
         });
+
+        // Solution Slideshow
+        (function() {
+            const slides = document.querySelectorAll('.solution-slide');
+            const prevBtn = document.querySelector('.solution-arrow-prev');
+            const nextBtn = document.querySelector('.solution-arrow-next');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            const interval = 5000; // 5 seconds
+
+            function showSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+
+            function nextSlide() { showSlide(currentSlide + 1); }
+            function prevSlide() { showSlide(currentSlide - 1); }
+
+            let autoSlide = setInterval(nextSlide, interval);
+
+            function resetAutoSlide() {
+                clearInterval(autoSlide);
+                autoSlide = setInterval(nextSlide, interval);
+            }
+
+            prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+            nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        })();
+
+        // Scroll Reveal Animation for Projects
+        (function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        })();
     </script>
+
+    <!-- FLOATING ZALO BUTTON -->
+    <a href="https://zalo.me/0703659168"
+       class="floating-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat Zalo">
+
+        <!-- Logo/Mascot bên trái -->
+        <div class="floating-btn-logo">
+            <img src="../../pictures/logo.png" alt="Logo">
+        </div>
+
+        <!-- Nút Zalo bên phải -->
+        <div class="floating-btn-zalo">
+            <!-- Zalo Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5z"/>
+            </svg>
+            Zalo
+        </div>
+    </a>
 </body>
 </html>
