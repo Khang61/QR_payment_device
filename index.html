@@ -2922,6 +2922,589 @@
         </div>
     </section>
 
+    <!-- INTERACTIVE DEVICE UI DEMO -->
+    <section id="device-demo" class="section section-alt">
+        <style>
+            /* === LAUNDRY OS Device Demo Styles === */
+            .device-demo-wrapper {
+                display: flex;
+                justify-content: center;
+                padding: 40px 0;
+            }
+            .device-frame {
+                width: 600px;
+                height: 460px;
+                background: #1a1a1a;
+                border: 12px solid #333;
+                border-radius: 20px;
+                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+            }
+            .device-screen {
+                width: 100%;
+                height: 100%;
+                background: #f5f5f5;
+                display: flex;
+                flex-direction: column;
+            }
+            /* Header Styles */
+            .device-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 20px;
+                background: #ffffff;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .device-header-left {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .device-logo {
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .device-logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .device-brand-info {
+                display: flex;
+                flex-direction: column;
+            }
+            .device-brand-name {
+                display: block;
+                height: 34px;
+            }
+            .device-brand-name img {
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+            }
+            .device-status-row {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                margin-top: 4px;
+            }
+            .device-status-online {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 14px;
+                color: #22c55e;
+            }
+            .device-status-online::before {
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: #22c55e;
+                border-radius: 50%;
+                animation: blink-dot 1.2s ease-in-out infinite;
+            }
+            @keyframes blink-dot {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.3; }
+            }
+            .device-time {
+                font-family: var(--font-mono);
+                font-size: 14px;
+                color: #666;
+            }
+            .device-header-right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 4px;
+            }
+            .device-wifi {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 14px;
+                color: #666;
+            }
+            .device-id {
+                font-family: var(--font-mono);
+                font-size: 13px;
+                color: #999;
+            }
+            /* Footer Styles */
+            .device-footer {
+                padding: 0;
+                background: #000000;
+                overflow: hidden;
+                height: 36px;
+            }
+            .device-footer-marquee {
+                display: flex;
+                animation: marquee-scroll 12s linear infinite;
+                white-space: nowrap;
+            }
+            .device-footer-text {
+                font-family: var(--font-display);
+                font-size: 15px;
+                color: #ffffff;
+                padding: 9px 20px;
+                display: inline-block;
+            }
+            @keyframes marquee-scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            /* QR Screen Footer */
+            .device-footer-qr {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 20px;
+                background: #000000;
+                height: 36px;
+            }
+            .device-footer-qr span {
+                font-family: var(--font-mono);
+                font-size: 13px;
+                color: #ffffff;
+            }
+            .device-content {
+                flex: 1;
+                position: relative;
+                overflow: hidden;
+                background: #f0f0f0;
+            }
+            [data-screen] {
+                position: absolute;
+                inset: 0;
+                display: none;
+                flex-direction: column;
+                padding: 12px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            [data-screen].active {
+                display: flex;
+                opacity: 1;
+            }
+            /* Home Screen - Mode Selection */
+            .mode-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                flex: 1;
+                align-content: center;
+                padding: 8px;
+            }
+            .mode-btn {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 10px;
+                background: #000000;
+                border: none;
+                clip-path: var(--chamfer-sm);
+                cursor: pointer;
+                transition: transform 0.1s ease, background 0.15s ease;
+            }
+            .mode-btn:hover { background: #222222; }
+            .mode-btn:active { transform: scale(0.96); }
+            .mode-price {
+                font-family: var(--font-mono);
+                font-size: 26px;
+                font-weight: 700;
+                color: #ffffff;
+            }
+            .mode-currency {
+                text-decoration: underline;
+            }
+            .mode-name {
+                font-family: var(--font-display);
+                font-size: 16px;
+                font-weight: 700;
+                color: #ff9600;
+                margin-top: 6px;
+                text-align: center;
+            }
+            .mode-duration {
+                font-family: var(--font-mono);
+                font-size: 16px;
+                font-weight: 700;
+                color: #ff9600;
+            }
+            /* QR Payment Screen */
+            .screen-qr {
+                background: #ffffff;
+                padding: 0 !important;
+            }
+            .qr-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 20px;
+                background: #ffffff;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .qr-back-btn {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: transparent;
+                border: none;
+                color: #1a2332;
+                font-family: var(--font-display);
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                padding: 0;
+            }
+            .qr-back-btn:hover { color: #000000; }
+            .qr-main {
+                flex: 1;
+                display: flex;
+                gap: 0;
+                padding: 16px 0;
+                background: #f8f8f8;
+            }
+            .qr-code-wrapper {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 16px;
+            }
+            .qr-code-img {
+                width: 220px;
+                height: 220px;
+                background: #fff;
+                border: 2px solid #e0e0e0;
+                border-radius: 4px;
+            }
+            .qr-info {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 24px;
+                border-left: 1px solid #e0e0e0;
+            }
+            .qr-label {
+                font-family: var(--font-display);
+                font-size: 18px;
+                font-weight: 600;
+                color: #1a2332;
+                margin-bottom: 6px;
+            }
+            .qr-amount {
+                font-family: var(--font-mono);
+                font-size: 40px;
+                font-weight: 700;
+                color: #1a2332;
+            }
+            .qr-amount-unit {
+                font-size: 22px;
+                color: #ff9600;
+                margin-left: 6px;
+            }
+            .qr-timer-label {
+                font-family: var(--font-display);
+                font-size: 18px;
+                font-weight: 600;
+                color: #1a2332;
+                margin-top: 20px;
+            }
+            .qr-timer {
+                font-family: var(--font-mono);
+                font-size: 34px;
+                font-weight: 700;
+                color: #0066cc;
+            }
+            /* Result Screen */
+            .screen-result {
+                background: #ffffff;
+                padding: 0 !important;
+            }
+            .result-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: #f8f8f8;
+            }
+            .result-icon { margin-bottom: 16px; }
+            .result-icon img {
+                width: 120px;
+                height: 120px;
+                object-fit: contain;
+            }
+            .result-title {
+                font-family: var(--font-display);
+                font-size: 22px;
+                font-weight: 700;
+                color: #1a2332;
+                margin-bottom: 6px;
+            }
+            .result-detail {
+                font-size: 14px;
+                color: #666;
+            }
+            @media (max-width: 768px) {
+                .device-demo-wrapper { padding: 20px 10px; }
+                .device-frame { width: 100%; max-width: 520px; height: auto; aspect-ratio: 30/23; border-width: 8px; }
+                .device-header { padding: 10px 12px; }
+                .device-logo { width: 36px; height: 36px; }
+                .device-brand-name { height: 26px; }
+                .device-status-online, .device-time, .device-wifi { font-size: 11px; }
+                .device-id { font-size: 10px; }
+                .device-footer, .device-footer-qr { height: 28px; }
+                .device-footer-text { font-size: 12px; padding: 7px 20px; }
+                .mode-grid { gap: 8px; padding: 4px; }
+                .mode-btn { padding: 14px 6px; }
+                .mode-price { font-size: 18px; }
+                .mode-name, .mode-duration { font-size: 12px; font-weight: 700; }
+            }
+        </style>
+
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <div class="section-badge">Giao diện</div>
+                <h2 class="section-title">Trải nghiệm <span>thực tế</span></h2>
+                <p class="section-description">Tương tác với giao diện thiết bị như đang sử dụng máy thật</p>
+            </div>
+
+            <div class="device-demo-wrapper animate-on-scroll animate-scale">
+                <div class="device-frame">
+                    <div class="device-screen">
+                        <div class="device-header" id="device-header-home">
+                            <div class="device-header-left">
+                                <div class="device-logo"><img src="pictures/logoIconCompany.png" alt="Logo"></div>
+                                <div class="device-brand-info">
+                                    <span class="device-brand-name"><img src="pictures/logoNameCompany.png" alt="LAUNDRY OS"></span>
+                                    <div class="device-status-row">
+                                        <span class="device-status-online">ONLINE</span>
+                                        <span class="device-time">13:08</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-header-right">
+                                <span class="device-wifi"><i data-lucide="wifi" style="width:16px;height:16px;"></i> 100%</span>
+                                <span class="device-id">VQR12345678</span>
+                            </div>
+                        </div>
+                        <div class="device-content">
+                            <!-- Home Screen - Mode Selection -->
+                            <div class="screen-home active" data-screen="home">
+                                <div class="mode-grid">
+                                    <button class="mode-btn" data-amount="8000" data-mode="Giặt s.nhanh" data-duration="19">
+                                        <span class="mode-price">8,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Giặt s.nhanh</span>
+                                        <span class="mode-duration">Vắt 19 Phút</span>
+                                    </button>
+                                    <button class="mode-btn" data-amount="12000" data-mode="Giặt nhanh" data-duration="25">
+                                        <span class="mode-price">12,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Giặt nhanh</span>
+                                        <span class="mode-duration">Vắt 25 Phút</span>
+                                    </button>
+                                    <button class="mode-btn" data-amount="18000" data-mode="Giặt t.chuẩn" data-duration="45">
+                                        <span class="mode-price">18,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Giặt t.chuẩn</span>
+                                        <span class="mode-duration">Vắt 45 Phút</span>
+                                    </button>
+                                    <button class="mode-btn" data-amount="23000" data-mode="Giặt mạnh" data-duration="44">
+                                        <span class="mode-price">23,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Giặt mạnh</span>
+                                        <span class="mode-duration">Vắt 44 Phút</span>
+                                    </button>
+                                    <button class="mode-btn" data-amount="5000" data-mode="Chỉ vắt" data-duration="8">
+                                        <span class="mode-price">5,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Chỉ vắt</span>
+                                        <span class="mode-duration">8 Phút</span>
+                                    </button>
+                                    <button class="mode-btn" data-amount="3000" data-mode="Vệ sinh" data-duration="10">
+                                        <span class="mode-price">3,000<span class="mode-currency">đ</span></span>
+                                        <span class="mode-name">Vệ sinh</span>
+                                        <span class="mode-duration">lồng giặt</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- QR Payment Screen -->
+                            <div class="screen-qr" data-screen="qr">
+                                <div class="qr-header">
+                                    <div class="device-header-left">
+                                        <div class="device-logo"><img src="pictures/logoIconCompany.png" alt="Logo"></div>
+                                        <div class="device-brand-info">
+                                            <span class="device-brand-name"><img src="pictures/logoNameCompany.png" alt="LAUNDRY OS"></span>
+                                            <div class="device-status-row">
+                                                <span class="device-status-online">ONLINE</span>
+                                                <span class="device-time">13:08</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="qr-back-btn" data-action="back"><i data-lucide="chevron-left" style="width:26px;height:26px;"></i> Quay lại</button>
+                                </div>
+                                <div class="qr-main">
+                                    <div class="qr-code-wrapper">
+                                        <img class="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://congnghechivi.vn/" alt="QR Code">
+                                    </div>
+                                    <div class="qr-info">
+                                        <div class="qr-label">Tổng thanh toán</div>
+                                        <div class="qr-amount"><span id="qr-amount-value">8,000</span><span class="qr-amount-unit">VND</span></div>
+                                        <div class="qr-timer-label">Thời gian còn lại</div>
+                                        <div class="qr-timer" id="qr-timer">03:55</div>
+                                    </div>
+                                </div>
+                                <div class="device-footer-qr">
+                                    <span>VQR12345678</span>
+                                    <span id="qr-date">4 Tháng 2, 2026</span>
+                                </div>
+                            </div>
+                            <!-- Result Screen -->
+                            <div class="screen-result" data-screen="result">
+                                <div class="qr-header">
+                                    <div class="device-header-left">
+                                        <div class="device-logo"><img src="pictures/logoIconCompany.png" alt="Logo"></div>
+                                        <div class="device-brand-info">
+                                            <span class="device-brand-name"><img src="pictures/logoNameCompany.png" alt="LAUNDRY OS"></span>
+                                            <div class="device-status-row">
+                                                <span class="device-status-online">ONLINE</span>
+                                                <span class="device-time">13:08</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="qr-back-btn" data-action="restart"><i data-lucide="chevron-left" style="width:26px;height:26px;"></i> Quay lại</button>
+                                </div>
+                                <div class="result-content">
+                                    <div class="result-icon" id="result-icon"><img src="pictures/logoPaymentSuccess.png" alt="Success"></div>
+                                    <div class="result-message">
+                                        <div class="result-title" id="result-title">Thanh toán thành công!</div>
+                                        <div class="result-detail" id="result-detail">Máy sẽ khởi động trong 3 giây...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="device-footer" id="device-footer-home">
+                            <div class="device-footer-marquee">
+                                <span class="device-footer-text">Thanhtoanqr.vn Powered by VHITEK - Hỗ trợ quét mã app ngân hàng và ví điện tử.</span>
+                                <span class="device-footer-text">Thanhtoanqr.vn Powered by VHITEK - Hỗ trợ quét mã app ngân hàng và ví điện tử.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function() {
+            const LaundryOS = {
+                state: { screen: 'home', amount: 0, mode: '', timer: null, seconds: 235, autoTimer: null, clockInterval: null, paymentCount: 0 },
+                init() {
+                    this.bind();
+                    lucide.createIcons();
+                    this.startClock();
+                },
+                getVietnamTime() {
+                    return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
+                },
+                updateClock() {
+                    const now = this.getVietnamTime();
+                    const h = String(now.getHours()).padStart(2, '0');
+                    const m = String(now.getMinutes()).padStart(2, '0');
+                    const timeStr = `${h}:${m}`;
+                    document.querySelectorAll('#device-demo .device-time').forEach(el => el.textContent = timeStr);
+                    this.updateDate();
+                },
+                startClock() {
+                    this.updateClock();
+                    this.state.clockInterval = setInterval(() => this.updateClock(), 1000);
+                },
+                bind() {
+                    document.querySelectorAll('#device-demo .mode-btn').forEach(b => b.onclick = e => this.selectMode(e));
+                    document.querySelectorAll('#device-demo [data-action="back"]').forEach(b => b.onclick = () => this.back());
+                    document.querySelectorAll('#device-demo [data-action="restart"]').forEach(b => b.onclick = () => this.restart());
+                },
+                show(name) {
+                    document.querySelectorAll('#device-demo [data-screen]').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+                    const t = document.querySelector(`#device-demo [data-screen="${name}"]`);
+                    if (t) { t.style.display = 'flex'; t.offsetHeight; t.classList.add('active'); }
+                    this.state.screen = name;
+                    // Toggle header/footer visibility
+                    const homeHeader = document.getElementById('device-header-home');
+                    const homeFooter = document.getElementById('device-footer-home');
+                    if (name === 'qr') {
+                        homeHeader.style.display = 'none';
+                        homeFooter.style.display = 'none';
+                    } else if (name === 'result') {
+                        homeHeader.style.display = 'none';
+                        homeFooter.style.display = 'block';
+                    } else {
+                        homeHeader.style.display = 'flex';
+                        homeFooter.style.display = 'block';
+                    }
+                },
+                updateDate() {
+                    const now = this.getVietnamTime();
+                    const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
+                                    'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
+                    document.getElementById('qr-date').textContent = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`;
+                },
+                selectMode(e) {
+                    const btn = e.currentTarget;
+                    this.state.amount = parseInt(btn.dataset.amount);
+                    this.state.mode = btn.dataset.mode;
+                    document.getElementById('qr-amount-value').textContent = new Intl.NumberFormat('vi-VN').format(this.state.amount);
+                    this.show('qr');
+                    this.startTimer();
+                },
+                startTimer() {
+                    this.state.seconds = 235; // 3:55
+                    this.updateTimer();
+                    this.state.timer = setInterval(() => {
+                        this.state.seconds--;
+                        this.updateTimer();
+                        if (this.state.seconds <= 230) { this.clearTimer(); this.result(); } // Demo: trigger after 5s
+                    }, 1000);
+                },
+                updateTimer() {
+                    const m = Math.floor(this.state.seconds / 60);
+                    const s = this.state.seconds % 60;
+                    document.getElementById('qr-timer').textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+                },
+                clearTimer() { if (this.state.timer) { clearInterval(this.state.timer); this.state.timer = null; } },
+                result() {
+                    this.state.paymentCount++;
+                    const ok = this.state.paymentCount % 3 !== 0; // Lần 1,2: thành công, lần 3: thất bại
+                    const ic = document.getElementById('result-icon');
+                    ic.innerHTML = `<img src="pictures/${ok ? 'logoPaymentSuccess' : 'logoPaymentFail'}.png" alt="${ok ? 'Success' : 'Fail'}">`;
+                    document.getElementById('result-title').textContent = ok ? 'Thanh toán thành công!' : 'Thanh toán thất bại!';
+                    document.getElementById('result-detail').textContent = ok ? 'Máy sẽ khởi động trong 3 giây...' : 'Vui lòng thử lại.';
+                    this.show('result');
+                    lucide.createIcons();
+                    this.state.autoTimer = setTimeout(() => this.restart(), 4000);
+                },
+                back() {
+                    this.clearTimer();
+                    this.show('home');
+                },
+                restart() {
+                    this.clearTimer();
+                    if (this.state.autoTimer) { clearTimeout(this.state.autoTimer); this.state.autoTimer = null; }
+                    this.state.amount = 0;
+                    this.state.mode = '';
+                    this.show('home');
+                }
+            };
+            LaundryOS.init();
+        })();
+        </script>
+    </section>
+
     <!-- CTA SECTION -->
     <section id="contact" class="cta">
         <div class="cta-container">
@@ -2979,6 +3562,7 @@
                     <ul class="footer-links">
                         <li><a href="#" class="footer-link">Hướng dẫn lắp đặt</a></li>
                         <li><a href="#demo" class="footer-link">Xem demo</a></li>
+                        <li><a href="#device-demo" class="footer-link">Trải nghiệm giao diện</a></li>
                         <li><a href="#" class="footer-link">Chính sách bảo hành</a></li>
                         <li><a href="#contact" class="footer-link">Liên hệ hỗ trợ</a></li>
                     </ul>
